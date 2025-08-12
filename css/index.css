@@ -1,0 +1,27 @@
+.wrapper-signprime {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-inline: auto;
+    column-gap: 6px;
+}
+
+.singup {
+    width: 260px;
+    height: 38px;
+    padding: 0 16px;
+    margin-top: 5px;
+    font-size: 13px;
+    font-weight: 350;
+    color: #fff;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.singup-parametr {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-self: center;
+}

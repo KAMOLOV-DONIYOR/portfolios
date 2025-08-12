@@ -1,0 +1,367 @@
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  border: 1px solid transparent;
+}
+/* scroll bar/> */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: transparent;
+}
+body {
+  margin: 0;
+  background: black;
+  color: white;
+  font-family: "Segoe UI", "Segoe UI Variable", "Segoe UI Historic",
+  "Segoe UI Emoji", sans-serif;
+  overflow-x: hidden;
+}
+.container {
+  width: 1240px;
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+img {
+  display: block;
+}
+a{
+  text-decoration-line: none;
+}
+/* main css/> */
+:root {
+  --base-color: #00bfff;
+  --second-color: #0370be;
+  --glass-backdrop: blur(6px);
+  --glass-background: rgba(63, 81, 117, 0.2);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.2);
+  --glass-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+/* rgb css */
+.card{
+  margin: 0 auto;
+  padding: 1px 20px;
+  width: 300px;
+  background: #1c1f2b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 26px;
+  position: relative;
+}
+@property --angle{
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+.card::after, .card::before{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: conic-gradient(from var(--angle), #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 3px;
+  border-radius: 10px;
+  animation: 3s spin linear infinite;
+}
+.card::before{
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}
+@keyframes spin{
+  from{
+    --angle: 0deg;
+  }
+  to{
+    --angle: 360deg;
+  }
+}
+/* rgb css */
+/* backgrounds, slidedown & blur */
+.blur {
+  -webkit-backdrop-filter: var(--glass-backdrop);
+  backdrop-filter: var(--glass-backdrop);
+  background: var(--glass-background);
+  border: var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+@keyframes slideDown {
+  from {
+    top: -350px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.header-bg {
+  position: absolute;
+  top: -300px;
+  left: 0;
+  width: 100%;
+  height: 350px;
+  background: url("../images/backgraunds/headerblue.png") no-repeat center top;
+  background-size: 118% auto;
+  animation: slideDown 2s ease-out forwards;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.footer-bg {
+  position: absolute;
+  width: 100%;
+  height: 218px;
+  background: url("../images/backgraunds/footerblue.png") no-repeat center bottom;
+  background-size: 120% auto;
+  z-index: -1;
+}
+/* backgrounds, slidedown & blur */
+
+/* loading progres bar */
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  background-color: var(--second-color);
+  width: 0%;
+  z-index: 9999;
+  transform-origin: left;
+}
+#progress-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 100%;
+  background-color: rgb(77, 77, 77);
+  z-index: 9998;
+}
+/* loading progres bar */
+
+/* header  */
+.navbar {
+  position: relative;
+  width: 435px;
+  height: 65px;
+  margin: 8px auto 16px;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  color: #fff;
+  position: sticky;
+  top: 14px;
+  overflow: visible; /* dropdown chiqishi uchun */
+}
+
+.nav-wrap {
+  display: flex;
+  align-items: center;
+
+}
+
+.navbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  -webkit-backdrop-filter: var(--glass-backdrop);
+  backdrop-filter: var(--glass-backdrop);
+  background: var(--glass-background);
+  border: var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: 40px;
+  z-index: -1; /* fon ortda turadi */
+}
+
+/* Nav Items */
+.nav-item {
+  position: relative;
+}
+
+.nav-item a {
+  padding-inline: 5px;
+}
+
+.nav-link {
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--base-color);
+}
+
+/* Dropdown Menu */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  padding: 10px 0;
+  border-radius: 30px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s ease;
+  /* blur > */
+  backdrop-filter: blur(10px) saturate(1.8);
+  -webkit-backdrop-filter: blur(10px) saturate(1.8);
+  background: var(--glass-background);
+  border: var(--glass-border);
+}
+
+.dropdown hr {
+  border: var(--glass-border);
+  margin: 0;
+}
+
+.nav-item:hover .dropdown {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.dropdown a {
+  display: block;
+  padding: 10px 18px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.dropdown a:hover {
+  color: var(--base-color);
+}
+
+.margin-default {
+  margin-left: 10px;
+}
+
+.logo {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+}
+
+.logo p {
+  padding: 0;
+  margin: 0;
+}
+/* github */
+.icon-text {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.github-icon {
+  fill: #ffffff; /* Boshlang‘ich rang */
+  transition: fill 0.3s ease;
+}
+
+.github-text {
+  font-size: 16px;
+  color: #ffffff; /* Boshlang‘ich rang */
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+  transition: color 0.3s ease;
+}
+
+.icon-text:hover .github-icon {
+  fill: #00bfff; /* Hover rangi */
+}
+
+.icon-text:hover .github-text {
+  color: #00bfff; /* Hover rangi */
+}
+
+
+/* header  */
+
+/* footer */
+.custom-footer {
+  width: 60%;
+  margin-inline: auto;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 30px;
+  padding-bottom: 0;
+  position: relative;
+  top: 225px;
+}
+
+.footer-content {
+  width: 600px;
+  height: 130px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-column h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.footer-column a {
+  display: block;
+  color: #ccc;
+  font-size: 14px;
+  text-decoration: none;
+  margin: 5px 0;
+  transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+  color: var(--base-color);
+}
+
+.footer-logo {
+  width: 41px;
+  height: 41px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.footer-column h3 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.footer-bottom {
+  border-top: 2px solid rgba(255, 255, 255, 0.3);
+  text-align: center;
+  font-size: 13px;
+  color: #aaa;
+}
+
+.copyright {
+  color: #fff;
+}
+/* footer */
