@@ -1,3 +1,5 @@
+@import url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap");
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -29,21 +31,58 @@ body {
 }
 img {
   display: block;
+  user-select: none;
 }
-a{
+a {
   text-decoration-line: none;
 }
 /* main css/> */
 :root {
   --base-color: #00bfff;
   --second-color: #0370be;
+  --thered-color: #cfe3f0;
   --glass-backdrop: blur(6px);
   --glass-background: rgba(63, 81, 117, 0.2);
   --glass-border: 1px solid rgba(255, 255, 255, 0.2);
   --glass-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
+/* ripple btn */
+.ripple {
+  background-color: purple;
+  color: #fff;
+  border: 1px purple solid;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 20px 30px;
+  overflow: hidden;
+  margin: 10px 0;
+  position: relative;
+}
+
+.ripple:focus {
+  outline: none;
+}
+
+.ripple .circle {
+  position: absolute;
+  background-color: #fff;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: scale 0.5s ease-out;
+}
+
+@keyframes scale {
+  to {
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+  }
+}
+/* ripple btn */
 /* rgb css */
-.card{
+.card {
   margin: 0 auto;
   padding: 1px 20px;
   width: 300px;
@@ -54,17 +93,25 @@ a{
   border-radius: 26px;
   position: relative;
 }
-@property --angle{
+@property --angle {
   syntax: "<angle>";
   initial-value: 0deg;
   inherits: false;
 }
-.card::after, .card::before{
-  content: '';
+.card::after,
+.card::before {
+  content: "";
   position: absolute;
   height: 100%;
   width: 100%;
-  background-image: conic-gradient(from var(--angle), #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
+  background-image: conic-gradient(
+  from var(--angle),
+  #ff4545,
+  #00ff99,
+  #006aff,
+  #ff0095,
+  #ff4545
+  );
   top: 50%;
   left: 50%;
   translate: -50% -50%;
@@ -73,15 +120,15 @@ a{
   border-radius: 10px;
   animation: 3s spin linear infinite;
 }
-.card::before{
+.card::before {
   filter: blur(1.5rem);
   opacity: 0.5;
 }
-@keyframes spin{
-  from{
+@keyframes spin {
+  from {
     --angle: 0deg;
   }
-  to{
+  to {
     --angle: 360deg;
   }
 }
@@ -123,7 +170,8 @@ a{
   position: absolute;
   width: 100%;
   height: 218px;
-  background: url("../images/backgraunds/footerblue.png") no-repeat center bottom;
+  background: url("../images/backgraunds/footerblue.png") no-repeat center
+  bottom;
   background-size: 120% auto;
   z-index: -1;
 }
@@ -165,13 +213,13 @@ a{
   color: #fff;
   position: sticky;
   top: 14px;
-  overflow: visible; /* dropdown chiqishi uchun */
+  overflow: visible;
+  z-index: 1000;
 }
 
 .nav-wrap {
   display: flex;
   align-items: center;
-
 }
 
 .navbar::before {
@@ -201,6 +249,10 @@ a{
   font-size: 16px;
   text-decoration: none;
   transition: all 0.3s ease;
+  border: none;
+  background-color: transparent;
+  padding: 3px;
+  cursor: pointer;
 }
 
 .nav-link:hover {
@@ -211,7 +263,7 @@ a{
 .dropdown {
   position: absolute;
   top: 100%;
-  left: 0;
+  left: -40px;
   min-width: 200px;
   padding: 10px 0;
   border-radius: 30px;
@@ -252,12 +304,16 @@ a{
   margin-left: 10px;
 }
 
+.margin-top {
+  margin-top: 200px;
+}
+
 .logo {
   margin: 0;
   padding: 0;
   text-decoration: none;
   color: #fff;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 800;
 }
 
@@ -295,7 +351,6 @@ a{
 .icon-text:hover .github-text {
   color: #00bfff; /* Hover rangi */
 }
-
 
 /* header  */
 

@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="site icon" href="./images/icons/siteicon.png">
   <title>PRO - PORTFOLIO</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/main.css">
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
   <div id="progress-bg"></div>
   <div id="progress-bar"></div>
-  <div class="header-bg"></div>
+  <div id="aboutme" class="header-bg"></div>
   <!-- it's main cods-->
   <!-- header -->
   <!-- <div class="wrapper-signprime">
@@ -31,21 +31,20 @@
         <p class="logo">PORTFOLIO</p>
       </a>
       <div class="nav-item margin-default">
-        <a href="#" class="nav-link">Sections</a>
+        <button href="#" class="nav-link">Sections</button>
         <div class="dropdown">
-          <a href="#">About me</a>
+          <a href="#aboutme">About me</a>
+          <a href="#moreaboutme">More About me</a>
           <hr>
-          <a href="#">Nice 3D</a>
+          <a href="#nice3d">Nice 3D</a>
           <a href="#">My Projects</a>
-          <a href="#">Swiper React</a>
           <a href="#">Swiper Vue</a>
           <hr>
           <a href="#">Changelog</a>
         </div>
       </div>
-      
       <div class="nav-item">
-        <a href="#" class="nav-link">Skills</a>
+        <button href="#" class="nav-link">Skills</button>
         <div class="dropdown">
           <a href="#">Getting Started</a>
           <a href="#">Swiper Core / API</a>
@@ -54,14 +53,23 @@
           <a href="#">Swiper React</a>
         </div>
       </div>
-      
       <div class="nav-item">
-        <a href="#" class="nav-link">Contact</a>
+        <button href="#" class="nav-link">Contact</button>
         <div class="dropdown">
           <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kdoniyor213@gmail.com" target="_blank" rel="noopener noreferrer">Email me</a>
           
           <a href="https://t.me/vxcssss" target="_blank" rel="noopener noreferrer">My Telegram</a>
           <a href="https://www.instagram.com/x__kamolov/" target="_blank" rel="noopener noreferrer">Instagram Profile</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button href="#" class="nav-link">English</button>
+        <div class="dropdown">
+          <a href="#">English</a>
+          <hr>
+          <a href="#">Russian</a>
+          <hr>
+          <a href="#">Uzbek</a>
         </div>
       </div>
       
@@ -73,24 +81,74 @@
           <span class="github-text">GitHub</span>
         </div>
       </a>
-      
-      
-      
     </div>
   </div>
-  
   <!-- header -->
   <!-- content start-->
   
   <!-- <div class="about-background"></div> -->
   
-  <section>
+  <section class="about-section">
     <div class="container">
       <div class="about-wrapper">
-        <!-- <img src="./images/image/myphoto.jpg" alt="" class="my-photo"> -->
+        <img src="./images/image/myphotosss.webp" alt="" class="my-photo">
+        <div class="about-left-wrap">
+          <p class="about-text">Salom Men Kamolov Doniyor, frontend dasturchiman, Yoshim 15da.</p>
+          <div class="about-logo-wrap">
+            <p class="about-logo">PORTFOLIO</p><p class="about-desc">released on August 28, 2025</p>
+          </div>
+        </div>
+      </div>
+      <div id="moreaboutme"></div>
+      
+      <div class="about-wrapper margin-top">
+        <div class="about-right-wrap">
+          <p class="about-title">Men frontend dasturchiman, asosiy malakam HTML, CSS va JavaScript dasturlash tillariga asoslangan. Kod yozish va o‘z qo‘lim bilan samarali, amaliy loyihalar yaratish mening asosiy ustuvorligimdir. Kelajakda IT sohasida o‘z kompaniyamni tashkil etish va senior dasturchi sifatida professional darajaga yetish maqsadimdir. Shaxsiy hayotimda sport bilan muntazam shug‘ullanaman, atlet sifatida doimiy ravishda o‘z oldimga yangi maqsadlar qo‘yaman va ularga erishishga intilaman.</p>
+        </div>
+        <img src="./images/image/myphotosss.webp" alt="" class="my-photo">
       </div>
     </div>
   </section>
+  
+  
+  <div id="nice3d"></div>
+  
+  <div id="tech-rotation">
+    <div class="tech-rotation-container">
+      <!-- center VS Code -->
+      <div class="tech-center-icon">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg" 
+        alt="VS Code" class="tech-vscode-icon">
+      </div>
+      
+      <!-- rotation icons -->
+      <div class="tech-rotating-ring">
+        <div class="tech-orbit-icon" style="--angle: 0deg;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" 
+          alt="HTML5" class="tech-icon">
+        </div>
+        <div class="tech-orbit-icon" style="--angle: 72deg;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" 
+          alt="CSS3" class="tech-icon">
+        </div>
+        <div class="tech-orbit-icon" style="--angle: 144deg;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" 
+          alt="JavaScript" class="tech-icon">
+        </div>
+        <div class="tech-orbit-icon" style="--angle: 216deg;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Sass_Logo_Color.svg" 
+          alt="SCSS" class="tech-icon">
+        </div>
+        <div class="tech-orbit-icon" style="--angle: 288deg;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg" 
+          alt="Bootstrap" class="tech-icon">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
   
   <!-- content end-->
   <!-- footer -->
@@ -113,9 +171,10 @@
         <a href="https://www.instagram.com/x__kamolov/" target="_blank" rel="noopener noreferrer">Instagram Profile</a>
       </div>
     </div>
-
+    
     <div class="footer-bottom">
-      <p class="copyright">&copy; 2025 Kamolov Doniyor. Barcha huquqlar himoyalangan.</p>
+      <p class="copyright">&copy; 2025 Kamolov Doniyor. All Rights Reserved.
+      </p>
     </div>
   </footer>
   <!-- footer -->
@@ -123,5 +182,7 @@
   <div class="footer-bg"></div>
   <script src="./js/main.js"></script>
   <script src="./js/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 </body>
 </html>

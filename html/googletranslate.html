@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Live Translate</title>
+  <link rel="site icon" href="../images/icons/siteicon.png" />
+  <link rel="stylesheet" href="../css/main.css" />
+  <style>
+    :root {
+      --bg: #0f1115;
+      --card: #151926;
+      --text: #e6e9ef;
+      --muted: #98a2b3;
+      --accent: #7c5cff;
+      --radius: 14px;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      color: var(--text);
+    }
+    .app {
+      width: min(920px, 94vw);
+      margin: 0 auto;
+      margin-top: 120px;
+    }
+    .navbar-translatepro {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: color-mix(in oklab, var(--card) 86%, #000 14%);
+      border: 1px solid #23293a;
+      border-radius: var(--radius);
+      padding: 10px 14px;
+      margin-bottom: 16px;
+      backdrop-filter: blur(6px);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #fff, var(--accent));
+      box-shadow: 0 0 12px var(--accent);
+    }
+    .lang {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .lang label {
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .lang select {
+      appearance: none;
+      background: #1b2030;
+      color: var(--text);
+      padding: 10px 38px 10px 12px;
+      border: 1px solid #2a3146;
+      border-radius: 12px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .lang select:focus {
+      outline: 2px solid #394163;
+    }
+    .hero {
+      background: color-mix(in oklab, var(--card) 88%, #000 12%);
+      border: 1px solid #23293a;
+      border-radius: var(--radius);
+      padding: clamp(18px, 3.5vw, 28px);
+    }
+    .hero h1 {
+      font-size: clamp(24px, 4.6vw, 44px);
+      margin: 0 0 10px;
+    }
+    .hero p {
+      font-size: clamp(14px, 2.2vw, 18px);
+      color: var(--muted);
+      margin: 0 0 18px;
+      max-width: 70ch;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+    .card-translatepro {
+      background: #131827;
+      border: 1px solid #23293a;
+      border-radius: 12px;
+      padding: 14px;
+    }
+    .card-translatepro h3 {
+      margin: 0 0 6px;
+      font-size: 18px;
+    }
+    .card-translatepro p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    
+    /* ---- Google banner/branding-ni butunlay yashirish ---- */
+    .goog-te-banner-frame.skiptranslate {
+      display: none !important;
+    }
+    .goog-te-banner-frame {
+      display: none !important;
+    }
+    .goog-te-gadget {
+      color: transparent !important;
+    }
+    .goog-te-gadget span {
+      display: none !important;
+    }
+    .goog-logo-link,
+    .goog-te-gadget img {
+      display: none !important;
+    }
+    #google_translate_element {
+      height: 0;
+      overflow: hidden;
+    }
+    
+    /* Layout siljishini oldini olish */
+    html,
+    body {
+      top: 0 !important;
+    }
+    body .skiptranslate {
+      display: none !important;
+    }
+    #goog-gt-tt,
+    .goog-tooltip,
+    .goog-tooltip:hover {
+      display: none !important;
+    }
+    .goog-text-highlight {
+      background: inherit;
+      box-shadow: none;
+    }
+    
+    /* iOS/Safari margin-top injeksiyasini fix */
+    html {
+      margin-top: 0 !important;
+    }
+    
+    .lang {
+      position: relative;
+      font-size: 14px;
+      color: var(--text);
+      user-select: none;
+    }
+    
+    .lang-current {
+      background: #1b2030;
+      border: 1px solid #2a3146;
+      border-radius: 12px;
+      padding: 10px 38px 10px 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .lang-options {
+      top: calc(100% + 6px);
+      right: 0;
+      background: #1b2030;
+      border: 1px solid #2a3146;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+      display: none;
+      z-index: 100;
+      display: flex;
+    }
+    
+    .lang-options div {
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+    
+    .lang-options div:hover {
+      background: #23293a;
+    }
+    
+    .lang.open .lang-options {
+      display: block;
+    }
+    
+    [translate="no"] {
+      user-select: none; /* matn tanlanmasin */
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header class="navbar-translatepro">
+      <div class="brand">
+        <span class="dot"></span>
+        <span>LiveTranslate</span>
+      </div>
+      <div class="lang" id="langMenu">
+        <div class="lang-current">
+          <span id="currentLang">O‘zbek (UZ)</span>
+          <svg viewBox="0 0 24 24" width="18" height="18">
+            <path fill="currentColor" d="M7 10l5 5 5-5z" />
+          </svg>
+        </div>
+        <div class="lang-options">
+          <div translate="no" data-lang="uz">O‘zbek (UZ)</div>
+          <div translate="no" data-lang="en">English (EN)</div>
+          <div translate="no" data-lang="ru">Русский (RU)</div>
+        </div>
+      </div>
+    </header>
+    
+    <main class="hero">
+      <h1 data-i18n>Salom! Saytimizga xush kelibsiz 👋</h1>
+      <p data-i18n>
+        Bu demo sahifa Google Translate yordamida matnni jonli tarjima qiladi.
+        Yuqoridagi menyudan til tanlang — matnlar darhol o‘zgaradi. Hech
+        qanday yuqori banner chiqmaydi va sahifa joyidan siljib ketmaydi.
+      </p>
+      <div class="grid">
+        <section class="card-translatepro">
+          <h3 data-i18n>Xizmatlar</h3>
+          <p data-i18n>
+            Biz web-saytlar, UI/UX dizayn va optimizatsiya xizmatlarini taklif
+            qilamiz.
+          </p>
+        </section>
+        <section class="card-translatepro">
+          <h3 data-i18n>Afzalliklar</h3>
+          <p data-i18n>
+            Tezkor ish, zamonaviy dizayn va mobil moslashuvchanlik.
+          </p>
+        </section>
+        <section class="card-translatepro">
+          <h3 data-i18n>Aloqa</h3>
+          <p data-i18n>
+            Biz bilan bog‘lanish uchun “Kontakt” bo‘limidan foydalaning.
+          </p>
+        </section>
+      </div>
+    </main>
+  </div>
+  
+  <!-- Google uchun yashirin element -->
+  <div id="google_translate_element"></div>
+  
+  <script>
+    const langMenu = document.getElementById("langMenu");
+    const currentLang = document.getElementById("currentLang");
+    
+    langMenu.addEventListener("click", (e) => {
+      const current = e.target.closest(".lang-current"); // ichida yozuv bo‘lsa ham ishlaydi
+      const option = e.target.closest("[data-lang]"); // variant bosilganda ishlaydi
+      
+      if (current) {
+        langMenu.classList.toggle("open");
+      }
+      
+      if (option) {
+        const lang = option.dataset.lang;
+        currentLang.textContent = option.textContent;
+        setLanguage(lang);
+        localStorage.setItem("site_lang", lang);
+        langMenu.classList.remove("open");
+      }
+    });
+    
+    document.addEventListener("click", (e) => {
+      if (!langMenu.contains(e.target)) langMenu.classList.remove("open");
+    });
+    
+    // restore selected language
+    (function restoreLang() {
+      const saved = localStorage.getItem("site_lang") || "uz";
+      const langText = {
+        uz: "O‘zbek (UZ)",
+        en: "English (EN)",
+        ru: "Русский (RU)",
+      };
+      currentLang.textContent = langText[saved] || "O‘zbek (UZ)";
+      const boot = () => {
+        if (document.querySelector(".goog-te-combo")) setLanguage(saved);
+        else requestAnimationFrame(boot);
+      };
+      boot();
+    })();
+    
+    // Google Translate'ni init qilish (yashirin)
+    function googleTranslateElementInit() {
+      /* global google */
+      new google.translate.TranslateElement(
+      {
+        pageLanguage: "uz",
+        includedLanguages: "uz,en,ru",
+        autoDisplay: false,
+      },
+      "google_translate_element"
+      );
+    }
+    
+    // Banner paydo bo‘lsa ham, darrov olib tashlash (ba'zi brauzerlar uchun)
+    const removeBanner = () => {
+      const b1 = document.querySelector(".goog-te-banner-frame");
+      if (b1 && b1.parentNode) b1.parentNode.removeChild(b1);
+      document.documentElement.style.marginTop = "0px";
+      document.body.style.top = "0px";
+    };
+    // DOM o‘zgarishlarini kuzatib boramiz
+    new MutationObserver(removeBanner).observe(document.documentElement, {
+      childList: true,
+      subtree: true,
+    });
+    // fallback
+    setInterval(removeBanner, 1000);
+    
+    // Google ichki select'ini boshqarib tilni o‘zgartirish
+    function setLanguage(lang) {
+      const trySwitch = () => {
+        const select = document.querySelector(".goog-te-combo");
+        if (!select) return requestAnimationFrame(trySwitch);
+        if (select.value !== lang) {
+          select.value = lang;
+          select.dispatchEvent(new Event("change"));
+        }
+        localStorage.setItem("site_lang", lang);
+      };
+      trySwitch();
+    }
+    
+    // Custom select bilan bog‘lash
+    const customSelect = document.getElementById("langSelect");
+    customSelect.addEventListener("change", (e) =>
+    setLanguage(e.target.value)
+    );
+    
+    // Oxirgi tanlangan tilni tiklash
+    (function restoreLang() {
+      const saved = localStorage.getItem("site_lang") || "uz";
+      customSelect.value = saved;
+      const boot = () => {
+        if (document.querySelector(".goog-te-combo")) setLanguage(saved);
+        else requestAnimationFrame(boot);
+      };
+      boot();
+    })();
+  </script>
+  
+  <!-- Google script -->
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

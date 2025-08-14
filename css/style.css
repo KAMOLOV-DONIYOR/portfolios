@@ -26,18 +26,200 @@
   align-self: center;
 }
 
+.about-section {
+  margin-top: 100px;
+}
+
+.about-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about-left-wrap {
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-right-wrap {
+  margin-right: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .my-photo {
   width: 340px;
   height: auto;
   border-radius: 10px;
 }
+.about-text {
+  color: var(--thered-color);
+  font-size: 48px;
+  font-weight: 400;
+}
 
-.about-background {
+.about-logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.about-logo {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+}
+
+.about-desc {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  color: var(--thered-color);
+  font-weight: 400;
+}
+
+.about-title {
+  color: var(--thered-color);
+  font-size: 24px;
+  font-weight: 400;
+}
+
+#tech-rotation {
+  margin-top: 200px;
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("../images/backgraunds/backgroundf.png") no-repeat center
+    center;
+  background-size: 100% 100%;
+  padding: 50px 0;
+}
+
+.tech-rotation-container {
+  position: relative;
+  text-align: center;
+  width: 500px;
+  height: 500px;
+}
+
+/* VS Code markazda */
+.tech-center-icon {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+.tech-vscode-icon {
+  width: 140px;
+  height: 140px;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
+  transition: transform 0.3s ease;
+}
+
+.tech-vscode-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Aylanuvchi ring */
+.tech-rotating-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  height: 350px;
+  animation: tech-rotate 20s linear infinite;
+}
+
+/* Orbit element */
+.tech-orbit-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90px;
+  height: 90px;
+  transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-175px)
+    rotate(calc(-1 * var(--angle)));
+  animation: tech-counter-rotate 20s linear infinite;
+}
+
+.tech-icon {
   width: 100%;
   height: 100%;
-  background: url("../images/backgraunds/backgrouns.png") no-repeat center
-    bottom;
-  background-size: 120% auto;
-  z-index: -1;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 8px;
+}
+
+.tech-icon:hover {
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.4));
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Animations */
+@keyframes tech-rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes tech-counter-rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-175px)
+      rotate(calc(-1 * var(--angle)));
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-175px)
+      rotate(calc(-1 * var(--angle) - 360deg));
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tech-rotation-container {
+    width: 350px;
+    height: 350px;
+  }
+  .tech-vscode-icon {
+    width: 100px;
+    height: 100px;
+  }
+  .tech-rotating-ring {
+    width: 250px;
+    height: 250px;
+  }
+  .tech-orbit-icon {
+    width: 70px;
+    height: 70px;
+    transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-125px)
+      rotate(calc(-1 * var(--angle)));
+  }
+  @keyframes tech-counter-rotate {
+    from {
+      transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-125px)
+        rotate(calc(-1 * var(--angle)));
+    }
+    to {
+      transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-125px)
+        rotate(calc(-1 * var(--angle) - 360deg));
+    }
+  }
 }
