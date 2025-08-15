@@ -1,25 +1,25 @@
-const buttons = document.querySelectorAll('.ripple')
-buttons.forEach(button => {
-    button.addEventListener('click', function (e) {
-        const x = e.pageX
-        const y = e.pageY
-
-        const buttonTop = e.target.offsetTop
-        const buttonLeft = e.target.offsetLeft
-
-        const xInside = x - buttonLeft
-        const yInside = y - buttonTop
-
-        const circle = document.createElement('span')
-        circle.classList.add('circle')
-        circle.style.top = yInside + 'px'
-        circle.style.left = xInside + 'px'
-
-        this.appendChild(circle)
-
-        setTimeout(() => circle.remove(), 500)
-    })
-})
+const buttons = document.querySelectorAll(".ripple");
+buttons.forEach((button) => {
+  button.addEventListener("click", function (e) {
+    const x = e.pageX;
+    const y = e.pageY;
+    
+    const buttonTop = e.target.offsetTop;
+    const buttonLeft = e.target.offsetLeft;
+    
+    const xInside = x - buttonLeft;
+    const yInside = y - buttonTop;
+    
+    const circle = document.createElement("span");
+    circle.classList.add("circle");
+    circle.style.top = yInside + "px";
+    circle.style.left = xInside + "px";
+    
+    this.appendChild(circle);
+    
+    setTimeout(() => circle.remove(), 500);
+  });
+});
 // ripple btn
 
 const bar = document.getElementById("progress-bar");
@@ -43,13 +43,85 @@ setTimeout(() => {
 }, 2500);
 // loading
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
+document.querySelectorAll('.dropdown a[href^="#"]').forEach((link) => {
+  link.addEventListener("click", function (e) {
     e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if(target) {
-      target.scrollIntoView({ behavior: 'smooth' });
+    
+    const targetId = this.getAttribute("href").substring(1);
+    const targetElement = document.getElementById(targetId);
+    
+    if (targetElement) {
+      const elementRect = targetElement.getBoundingClientRect();
+      const offset =
+      window.scrollY +
+      elementRect.top -
+      window.innerHeight / 2 +
+      elementRect.height / 2;
+      
+      window.scrollTo({
+        top: offset,
+        behavior: "smooth",
+      });
     }
   });
 });
 // smooth scroll
+
+const backToTopBtn = document.getElementById("backToTop");
+function toggleBackToTop() {
+  if (window.scrollY > 200) {
+    backToTopBtn.classList.add("show");
+  } else {
+    backToTopBtn.classList.remove("show");
+  }
+}
+window.addEventListener("scroll", toggleBackToTop);
+window.addEventListener("load", toggleBackToTop);
+// Click qilib tepaga qaytarish
+backToTopBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+// Scroll to Top Button
+// Translate Language Switcher
+let translations = {};
+
+async function loadTranslations() {
+  try {
+    const res = await fetch("../data/lang.json"); // lang.json manzili
+    translations = await res.json();
+    
+    const savedLang = localStorage.getItem("selectedLang") || "en";
+    setLanguage(savedLang);
+  } catch (err) {
+    console.error("Tarjima faylini yuklashda xato:", err);
+  }
+}
+
+function setLanguage(lang) {
+  if (!translations[lang]) return;
+  
+  document.querySelectorAll("[lang]").forEach(el => {
+    const key = el.getAttribute("lang");
+    if (translations[lang][key]) {
+      el.textContent = translations[lang][key];
+    }
+  });
+  
+  localStorage.setItem("selectedLang", lang);
+  document.getElementById("selected-lang").textContent =
+  lang === "en" ? "English" :
+  lang === "ru" ? "Russian" :
+  "Uzbek";
+}
+
+// Dropdown til tanlash event
+document.querySelectorAll(".dropdown a[data-lang]").forEach(link => {
+  link.addEventListener("click", e => {
+    e.preventDefault();
+    setLanguage(link.getAttribute("data-lang"));
+  });
+});
+
+// Sahifa yuklanganda tarjimalarni chaqirish
+loadTranslations();
+// Translate Language Switcher

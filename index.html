@@ -11,7 +11,10 @@
 <body>
   <div id="progress-bg"></div>
   <div id="progress-bar"></div>
-  <div id="aboutme" class="header-bg"></div>
+  <div class="header-bg"></div>
+  <button id="backToTop" title="Go to top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M12 21l0 -17.5"/><path d="M12 3l7 7M12 3l-7 7"/></g></svg>
+  </button>
   <!-- it's main cods-->
   <!-- header -->
   <!-- <div class="wrapper-signprime">
@@ -34,23 +37,23 @@
         <button href="#" class="nav-link">Sections</button>
         <div class="dropdown">
           <a href="#aboutme">About me</a>
-          <a href="#moreaboutme">More About me</a>
+          <a href="#">//...</a>
           <hr>
-          <a href="#nice3d">Nice 3D</a>
+          <a href="#nice3d">I Know</a>
           <a href="#">My Projects</a>
-          <a href="#">Swiper Vue</a>
+          <a href="#">//...</a>
           <hr>
-          <a href="#">Changelog</a>
+          <a href="#">//...</a>
         </div>
       </div>
       <div class="nav-item">
         <button href="#" class="nav-link">Skills</button>
         <div class="dropdown">
-          <a href="#">Getting Started</a>
-          <a href="#">Swiper Core / API</a>
+          <a href="#">//...</a>
+          <a href="#">//...</a>
           <hr>
-          <a href="#">Swiper Element</a>
-          <a href="#">Swiper React</a>
+          <a href="#">//...</a>
+          <a href="#">//...</a>
         </div>
       </div>
       <div class="nav-item">
@@ -63,13 +66,13 @@
         </div>
       </div>
       <div class="nav-item">
-        <button href="#" class="nav-link">English</button>
+        <button href="#" class="nav-link" id="selected-lang">English</button>
         <div class="dropdown">
-          <a href="#">English</a>
+          <a data-lang="en" href="#">English</a>
           <hr>
-          <a href="#">Russian</a>
+          <a data-lang="ru" href="#">Russian</a>
           <hr>
-          <a href="#">Uzbek</a>
+          <a data-lang="uz" href="#">Uzbek</a>
         </div>
       </div>
       
@@ -85,104 +88,95 @@
   </div>
   <!-- header -->
   <!-- content start-->
-  
-  <!-- <div class="about-background"></div> -->
-  
   <section class="about-section">
-    <div class="container">
-      <div class="about-wrapper">
-        <img src="./images/image/myphotosss.webp" alt="" class="my-photo">
+    <div class="container">  
+      <div class="intro-text">
+        <div>
+          <p lang="title" class="about-text"></p>
+        </div>
+        <div class="about-logo-wrap df">
+          <p class="about-logo">PORTFOLIO</p><p class="about-desc">released on August 28, 2025</p>
+        </div>
+      </div>
+      <div id="aboutme" class="about-wrapper margin-top">
+        <img src="https://placehold.co/404" alt="" class="my-photo">
         <div class="about-left-wrap">
-          <p class="about-text">Salom Men Kamolov Doniyor, frontend dasturchiman, Yoshim 15da.</p>
-          <div class="about-logo-wrap">
-            <p class="about-logo">PORTFOLIO</p><p class="about-desc">released on August 28, 2025</p>
+          <p lang="desc" class="about-title"></p>
           </div>
         </div>
       </div>
-      <div id="moreaboutme"></div>
-      
-      <div class="about-wrapper margin-top">
-        <div class="about-right-wrap">
-          <p class="about-title">Men frontend dasturchiman, asosiy malakam HTML, CSS va JavaScript dasturlash tillariga asoslangan. Kod yozish va o‘z qo‘lim bilan samarali, amaliy loyihalar yaratish mening asosiy ustuvorligimdir. Kelajakda IT sohasida o‘z kompaniyamni tashkil etish va senior dasturchi sifatida professional darajaga yetish maqsadimdir. Shaxsiy hayotimda sport bilan muntazam shug‘ullanaman, atlet sifatida doimiy ravishda o‘z oldimga yangi maqsadlar qo‘yaman va ularga erishishga intilaman.</p>
-        </div>
-        <img src="./images/image/myphotosss.webp" alt="" class="my-photo">
-      </div>
-    </div>
-  </section>
-  
-  
-  <div id="nice3d"></div>
-  
-  <div id="tech-rotation">
-    <div class="tech-rotation-container">
-      <!-- center VS Code -->
-      <div class="tech-center-icon">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg" 
-        alt="VS Code" class="tech-vscode-icon">
-      </div>
-      
-      <!-- rotation icons -->
-      <div class="tech-rotating-ring">
-        <div class="tech-orbit-icon" style="--angle: 0deg;">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" 
-          alt="HTML5" class="tech-icon">
-        </div>
-        <div class="tech-orbit-icon" style="--angle: 72deg;">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" 
-          alt="CSS3" class="tech-icon">
-        </div>
-        <div class="tech-orbit-icon" style="--angle: 144deg;">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" 
-          alt="JavaScript" class="tech-icon">
-        </div>
-        <div class="tech-orbit-icon" style="--angle: 216deg;">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Sass_Logo_Color.svg" 
-          alt="SCSS" class="tech-icon">
-        </div>
-        <div class="tech-orbit-icon" style="--angle: 288deg;">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg" 
-          alt="Bootstrap" class="tech-icon">
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  
-  
-  
-  <!-- content end-->
-  <!-- footer -->
-  <footer class="custom-footer blur">
-    <div class="footer-content">
-      <div class="footer-column">
-        <img class="logo footer-logo" src="" alt="">
-        <h3>PRO - SS</h3>
-      </div>
-      <div class="footer-column">
-        <h4>Sections</h4>
-        <a href="">PRO - SS</a>
-        <a href="">PRO - SS</a>
-        <a href="">PRO - SS</a>
-      </div>
-      <div class="footer-column">
-        <h4>Contact</h4>
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kdoniyor213@gmail.com" target="_blank" rel="noopener noreferrer">Email me</a>
-        <a href="https://t.me/vxcssss" target="_blank" rel="noopener noreferrer">My Telegram</a>
-        <a href="https://www.instagram.com/x__kamolov/" target="_blank" rel="noopener noreferrer">Instagram Profile</a>
-      </div>
-    </div>
+    </section>
     
-    <div class="footer-bottom">
-      <p class="copyright">&copy; 2025 Kamolov Doniyor. All Rights Reserved.
-      </p>
+    <div id="nice3d">
+      <div id="tech-rotation">
+        <div class="tech-rotation-container">
+          <!-- center VS Code -->
+          <div class="tech-center-icon">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg"
+            alt="VS Code" class="tech-vscode-icon">
+          </div>
+          
+          <!-- rotation icons -->
+          <div class="tech-rotating-ring">
+            <div class="tech-orbit-icon" style="--angle: 0deg;">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg"
+              alt="HTML5" class="tech-icon">
+            </div>
+            <div class="tech-orbit-icon" style="--angle: 60deg;">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg"
+              alt="CSS3" class="tech-icon">
+            </div>
+            <div class="tech-orbit-icon" style="--angle: 120deg;">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
+              alt="JavaScript" class="tech-icon">
+            </div>
+            <div class="tech-orbit-icon" style="--angle: 180deg;">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Sass_Logo_Color.svg"
+              alt="SCSS" class="tech-icon">
+            </div>
+            <div class="tech-orbit-icon" style="--angle: 240deg;">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg"
+              alt="Bootstrap" class="tech-icon">
+            </div>
+            <div class="tech-orbit-icon" style="--angle: 300deg;">
+              <img src="https://swiperjs.com/images/swiper-logo.svg"
+              alt="SwiperJS" class="tech-icon">
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </footer>
-  <!-- footer -->
-  <!-- it's main cods-->
-  <div class="footer-bg"></div>
-  <script src="./js/main.js"></script>
-  <script src="./js/index.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-</body>
-</html>
+    <!-- content end-->
+    <!-- footer -->
+    <footer class="custom-footer blur">
+      <div class="footer-content">
+        <div class="footer-column">
+          <img class="logo footer-logo" src="https://placehold.co/404" alt="">
+       <p class="logo">PORTFOLIO</p>
+        </div>
+        <div class="footer-column">
+          <h4>Sections</h4>
+          <a href="#aboutme">About me</a>
+          <a href="#nice3d">I Know</a>
+          <a href="#">My Projects</a>
+        </div>
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kdoniyor213@gmail.com" target="_blank" rel="noopener noreferrer">Email me</a>
+          <a href="https://t.me/vxcssss" target="_blank" rel="noopener noreferrer">My Telegram</a>
+          <a href="https://www.instagram.com/x__kamolov/" target="_blank" rel="noopener noreferrer">Instagram Profile</a>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2025 Kamolov Doniyor. All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+    <!-- footer -->
+    <!-- it's main cods-->
+    <div class="footer-bg"></div>
+    <script src="./js/main.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+  </html>

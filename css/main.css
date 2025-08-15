@@ -21,7 +21,7 @@ body {
   background: black;
   color: white;
   font-family: "Segoe UI", "Segoe UI Variable", "Segoe UI Historic",
-  "Segoe UI Emoji", sans-serif;
+    "Segoe UI Emoji", sans-serif;
   overflow-x: hidden;
 }
 .container {
@@ -35,6 +35,11 @@ img {
 }
 a {
   text-decoration-line: none;
+}
+.df {
+  display: flex;
+  align-items: center;
+  gap: 3px;
 }
 /* main css/> */
 :root {
@@ -105,12 +110,12 @@ a {
   height: 100%;
   width: 100%;
   background-image: conic-gradient(
-  from var(--angle),
-  #ff4545,
-  #00ff99,
-  #006aff,
-  #ff0095,
-  #ff4545
+    from var(--angle),
+    #ff4545,
+    #00ff99,
+    #006aff,
+    #ff0095,
+    #ff4545
   );
   top: 50%;
   left: 50%;
@@ -169,14 +174,55 @@ a {
 .footer-bg {
   position: absolute;
   width: 100%;
-  height: 218px;
+  height: 230px;
   background: url("../images/backgraunds/footerblue.png") no-repeat center
-  bottom;
+    bottom;
   background-size: 120% auto;
   z-index: -1;
 }
 /* backgrounds, slidedown & blur */
+/* slide top */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 100;
+  -webkit-backdrop-filter: var(--glass-backdrop);
+  backdrop-filter: var(--glass-backdrop);
+  background: var(--glass-background);
+  border: var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+  /* animatsiya uchun */
+  opacity: 0;
+  transform: translateY(10px); /* biroz pastga boshlab boshlash */
+  /* transform: translateX(10px); */
+  transition: opacity 0.8s ease, transform 0.3s ease, color 0.3s ease; /* sekinroq */
+}
+
+#backToTop.show {
+  opacity: 1;
+  transform: translateY(0); /* tepaga silliq chiqadi */
+}
+
+#backToTop:hover {
+  color: var(--base-color); /* svg rangini hoverda o‘zgartiradi */
+}
+
+#backToTop svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* slide top */
 /* loading progres bar */
 #progress-bar {
   position: fixed;
@@ -258,7 +304,6 @@ a {
 .nav-link:hover {
   color: var(--base-color);
 }
-
 /* Dropdown Menu */
 .dropdown {
   position: absolute;
@@ -305,7 +350,7 @@ a {
 }
 
 .margin-top {
-  margin-top: 200px;
+  margin-top: 280px;
 }
 
 .logo {
@@ -351,9 +396,7 @@ a {
 .icon-text:hover .github-text {
   color: #00bfff; /* Hover rangi */
 }
-
 /* header  */
-
 /* footer */
 .custom-footer {
   width: 60%;
@@ -420,3 +463,205 @@ a {
   color: #fff;
 }
 /* footer */
+
+/* ==================== RESPONSIVE CSS ==================== */
+
+/* Tablet va kichik ekranlar (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .container {
+    width: 95%;
+    padding-inline: 10px;
+  }
+
+  .about-left-wrap {
+    margin-left: 0px !important;
+  }
+
+  .about-right-wrap {
+    margin-right: 0px !important;
+  }
+
+  .navbar {
+    width: 95%;
+    height: auto;
+    padding: 10px 15px;
+  }
+
+  .nav-wrap {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-item {
+    margin: 5px;
+  }
+
+  .about-wrapper {
+    flex-direction: column;
+    gap: 30px;
+    margin-block: 80px 150px;
+    text-align: center;
+  }
+
+  .my-photo {
+    width: 250px;
+    height: 250px;
+  }
+
+  .about-text {
+    font-size: 36px;
+  }
+
+  .about-title {
+    width: 100%;
+    font-size: 20px;
+  }
+
+  .about-desc {
+    font-size: 14px;
+  }
+
+  .wrapper-signprime {
+    flex-direction: column;
+    row-gap: 10px;
+  }
+
+  .singup {
+    width: 200px;
+    height: 35px;
+    font-size: 12px;
+    padding: 0 12px;
+  }
+
+  /* Footer */
+
+  .footer-bg {
+    background-size: 170%;
+  }
+
+  .custom-footer {
+    width: 70%;
+    padding: 20px;
+  }
+
+  .footer-content {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+/* Mobil ekranlar (max-width: 768px) */
+@media (max-width: 768px) {
+  .about-section {
+    margin-block: 50px 100px;
+  }
+
+  .intro-text {
+    font-size: 20px;
+  }
+
+  .my-photo {
+    width: 200px;
+    height: 200px;
+  }
+
+  .about-text {
+    font-size: 28px;
+  }
+
+  .about-title {
+    font-size: 18px;
+  }
+
+  .about-desc {
+    font-size: 13px;
+  }
+
+  .wrapper-signprime {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .singup {
+    width: 160px;
+    height: 32px;
+    font-size: 11px;
+    padding: 0 10px;
+  }
+
+  .footer-bg {
+    background-size: 170%;
+  }
+
+  .custom-footer {
+    width: 90%;
+    padding-inline: 20px;
+  }
+
+  .footer-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Juda kichik ekranlar (max-width: 480px) */
+@media (max-width: 480px) {
+  .about-wrapper {
+    gap: 20px;
+  }
+
+  .my-photo {
+    width: 150px;
+    height: 150px;
+  }
+
+  .intro-text {
+    font-size: 18px;
+  }
+
+  .about-text {
+    font-size: 22px;
+  }
+
+  .about-title {
+    font-size: 16px;
+  }
+
+  .about-desc {
+    font-size: 12px;
+  }
+
+  .wrapper-signprime {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .singup {
+    width: 140px;
+    height: 30px;
+    font-size: 10px;
+    padding: 0 8px;
+  }
+
+  /* Footer */
+
+  .footer-bg {
+    background-size: 170%;
+  }
+  .custom-footer {
+    width: 90%;
+    padding-inline: 20px;
+    padding: 15px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-column a,
+  .footer-column h4 {
+    font-size: 13px;
+  }
+}
