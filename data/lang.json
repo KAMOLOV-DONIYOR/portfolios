@@ -1,0 +1,14 @@
+{
+  "uz": {
+    "title": "Salom Mening ismim Kamolov Doniyor, frontend dasturchiman, bu PORTFOLIO web saytim.",
+    "desc": "Men Frontend dasturchiman. Asosiy bilimlarim HTML, CSS va JavaScript dasturlash tillariga asoslangan. Bundan tashqari, Bootstrap, GitHub va Swiper bilan ishlash tajribasiga egaman. Kelajakda Senior darajaga chiqib, o‘z IT kompaniyamni ochishni maqsad qilganman. Shaxsiy hayotimda muntazam ravishda sport bilan shug‘ullanaman. Bilyard o‘yinini yaxshi ko‘raman va doimo o‘z ustimda ishlashga intilaman."
+  },
+  "ru": {
+    "title": "Здравствуйте, меня зовут Камолов Даниёр, я frontend-разработчик, это мой сайт ПОРТФОЛИО.",
+    "desc": "Я фронтенд-разработчик. Мои базовые знания основаны на языках программирования HTML, CSS и JavaScript. Кроме того, у меня есть опыт работы с Bootstrap, GitHub и Swiper. В будущем я планирую стать Senior и открыть собственную IT-компанию. В личной жизни я регулярно занимаюсь спортом. Люблю играть в бильярд и всегда стремлюсь к самосовершенствованию."
+  },
+  "en": {
+    "title": "Hello, my name is Kamolov Daniyor, I am a frontend developer, this is my PORTFOLIO website.",
+    "desc": "I am a Frontend developer. My basic knowledge is based on HTML, CSS and JavaScript programming languages. In addition, I have experience working with Bootstrap, GitHub and Swiper. In the future, I aim to become a Senior and open my own IT company. In my personal life, I regularly play sports. I love playing billiards and always strive to work on myself."
+  }
+}
