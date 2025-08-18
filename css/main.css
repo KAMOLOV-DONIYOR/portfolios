@@ -580,7 +580,7 @@ a {
 @media (max-width: 480px) {
   
    .header-bg {
-    background-size: 200% auto;
+    background-size: 300% auto;
   }
   
   .skills {
