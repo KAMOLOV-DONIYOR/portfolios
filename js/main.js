@@ -87,7 +87,7 @@ let translations = {};
 
 async function loadTranslations() {
   try {
-    const res = await fetch("data/lang.json"); // lang.json manzili
+const res = await fetch("../data/lang.json");
     translations = await res.json();
     
     const savedLang = localStorage.getItem("selectedLang") || "en";
