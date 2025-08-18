@@ -1,20 +1,24 @@
 @import url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap");
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 4px;
+  height: 15px;
 }
+
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+
 ::-webkit-scrollbar-thumb {
-  border-radius: 3px;
-  border: 1px solid transparent;
+  background-color: var(--glass-background);
+  backdrop-filter: var(--glass-backdrop);
+  border-radius: 50px;
+  border: var(--glass-border);
+  transition: background 0.3s ease;
 }
-/* scroll bar/> */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: transparent;
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--base-color);
 }
 body {
   margin: 0;
@@ -45,51 +49,20 @@ a {
 :root {
   --base-color: #00bfff;
   --second-color: #0370be;
-  --thered-color: #cfe3f0;
+  --third-color: #cfe3f0;
+  --fourth-color: #ccc;
   --glass-backdrop: blur(6px);
   --glass-background: rgba(63, 81, 117, 0.2);
   --glass-border: 1px solid rgba(255, 255, 255, 0.2);
   --glass-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 /* ripple btn */
-.ripple {
-  background-color: purple;
-  color: #fff;
-  border: 1px purple solid;
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  padding: 20px 30px;
-  overflow: hidden;
-  margin: 10px 0;
-  position: relative;
-}
 
-.ripple:focus {
-  outline: none;
-}
-
-.ripple .circle {
-  position: absolute;
-  background-color: #fff;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  animation: scale 0.5s ease-out;
-}
-
-@keyframes scale {
-  to {
-    transform: translate(-50%, -50%) scale(3);
-    opacity: 0;
-  }
-}
 /* ripple btn */
 /* rgb css */
 .card {
   margin: 0 auto;
-  padding: 1px 20px;
+  padding: 10px 20px;
   width: 300px;
   background: #1c1f2b;
   display: flex;
@@ -399,7 +372,7 @@ a {
 /* header  */
 /* footer */
 .custom-footer {
-  width: 60%;
+  width: 50%;
   margin-inline: auto;
   margin-bottom: 20px;
   padding: 20px;
@@ -426,7 +399,7 @@ a {
 
 .footer-column a {
   display: block;
-  color: #ccc;
+  color: var(--fourth-color);
   font-size: 14px;
   text-decoration: none;
   margin: 5px 0;
@@ -611,9 +584,9 @@ a {
   .navbar {
     width: 80%;
     padding-inline: 16px;
-  }  
+  }
 
-   .github-text {
+  .github-text {
     display: none;
   }
 

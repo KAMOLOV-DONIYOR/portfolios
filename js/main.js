@@ -1,34 +1,33 @@
-const buttons = document.querySelectorAll(".ripple");
-buttons.forEach((button) => {
+// ripple effekti qo'shish
+document.querySelectorAll(".ripple").forEach(button => {
   button.addEventListener("click", function (e) {
-    const x = e.pageX;
-    const y = e.pageY;
-    
-    const buttonTop = e.target.offsetTop;
-    const buttonLeft = e.target.offsetLeft;
-    
-    const xInside = x - buttonLeft;
-    const yInside = y - buttonTop;
-    
     const circle = document.createElement("span");
-    circle.classList.add("circle");
-    circle.style.top = yInside + "px";
-    circle.style.left = xInside + "px";
-    
+    const rect = this.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+
+    circle.style.width = circle.style.height = `${size}px`;
+    circle.style.left = `${e.clientX - rect.left - size / 2}px`;
+    circle.style.top = `${e.clientY - rect.top - size / 2}px`;
+
     this.appendChild(circle);
-    
-    setTimeout(() => circle.remove(), 500);
+
+    setTimeout(() => circle.remove(), 600);
   });
 });
+
 // ripple btn
 
 const bar = document.getElementById("progress-bar");
 bar.style.transition = "width 1.2s ease-out";
-bar.style.width = "40%";
+bar.style.width = "10%";
+setTimeout(() => {
+  bar.style.transition = "width 0.8s ease";
+  bar.style.width = "40%";
+}, 500);
 setTimeout(() => {
   bar.style.transition = "width 0.8s ease";
   bar.style.width = "70%";
-}, 1200);
+}, 800);
 setTimeout(() => {
   bar.style.transition = "width 0.4s ease-in";
   bar.style.width = "100%";
@@ -40,7 +39,7 @@ setTimeout(() => {
     bar.remove();
     document.getElementById("progress-bg").remove();
   }, 300);
-}, 2500);
+}, 1800);
 // loading
 
 document.querySelectorAll('.dropdown a[href^="#"]').forEach((link) => {

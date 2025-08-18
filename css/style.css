@@ -49,7 +49,7 @@
 /* faqat qo'shtirnoqlarni joylash uchun kerak bo'ladigan qism */
 .about-left-wrap {
   position: relative;
-  padding: 28px 75px;          /* qo'shtirnoqlar uchun ichki bo'shliq */
+  padding: 28px 75px; /* qo'shtirnoqlar uchun ichki bo'shliq */
 }
 
 .quote-open,
@@ -58,11 +58,11 @@
   width: 31px;
   height: 31px;
   pointer-events: none;
-  fill: var(--thered-color);
+  fill: var(--third-color);
 }
 
 .quote-open {
-  top: 43px;                   /* kerak bo'lsa raqamlarni moslab o'zgartiring */
+  top: 43px; /* kerak bo'lsa raqamlarni moslab o'zgartiring */
   left: 34px;
   transform: rotate(0deg);
 }
@@ -70,9 +70,8 @@
 .quote-close {
   bottom: 43px;
   right: 34px;
-  transform: rotate(180deg);   /* yopilish qo'shtirnoq */
+  transform: rotate(180deg); /* yopilish qo'shtirnoq */
 }
-
 
 .about-right-wrap {
   margin-right: 50px;
@@ -82,7 +81,7 @@
   justify-content: center;
 }
 
-#nice3d {
+.iknow {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -90,8 +89,8 @@
   text-align: center;
 }
 
-#nice3d h1 {
-  color: var(--thered-color);
+.iknow h1 {
+  color: var(--third-color);
   font-size: 45px;
   font-weight: 400;
   margin: 0;
@@ -143,7 +142,7 @@
 }
 
 .about-text {
-  color: var(--thered-color);
+  color: var(--third-color);
   font-size: 45px;
   font-weight: 400;
 }
@@ -168,18 +167,18 @@
   margin: 0;
   padding: 0;
   font-size: 16px;
-  color: var(--thered-color);
+  color: var(--third-color);
   font-weight: 400;
   user-select: none;
 }
 
 .about-title {
   width: 100%;
-  color: var(--thered-color);
+  color: var(--third-color);
   font-size: 22px;
   font-weight: 400;
   text-align: justify;
-  line-height: 1.4; 
+  line-height: 1.4;
 }
 /* orbit */
 #tech-rotation {
@@ -189,7 +188,7 @@
   align-items: center;
   justify-content: center;
   background: url("../images/backgraunds/backgroundf.png") no-repeat center
-    center;
+  center;
   background-size: 100% 100%;
 }
 
@@ -239,7 +238,7 @@
   width: 90px;
   height: 90px;
   transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-175px)
-    rotate(calc(-1 * var(--angle)));
+  rotate(calc(-1 * var(--angle)));
   animation: tech-counter-rotate 20s linear infinite;
 }
 
@@ -273,11 +272,11 @@
 @keyframes tech-counter-rotate {
   from {
     transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-175px)
-      rotate(calc(-1 * var(--angle)));
+    rotate(calc(-1 * var(--angle)));
   }
   to {
     transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-175px)
-      rotate(calc(-1 * var(--angle) - 360deg));
+    rotate(calc(-1 * var(--angle) - 360deg));
   }
 }
 
@@ -299,17 +298,100 @@
     width: 70px;
     height: 70px;
     transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-125px)
-      rotate(calc(-1 * var(--angle)));
+    rotate(calc(-1 * var(--angle)));
   }
   @keyframes tech-counter-rotate {
     from {
       transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-125px)
-        rotate(calc(-1 * var(--angle)));
+      rotate(calc(-1 * var(--angle)));
     }
     to {
       transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-125px)
-        rotate(calc(-1 * var(--angle) - 360deg));
+      rotate(calc(-1 * var(--angle) - 360deg));
     }
   }
 }
 /* orbit */
+
+/* mypro */
+.projects-description {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+  padding-inline: 20px;
+  padding: 28px 75px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.projects-section {
+  padding: 80px 0;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("../images/backgraunds/backgrouns.png") no-repeat center
+  center;
+  background-size: 100% 100%;
+}
+
+.projects-section .section-title {
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: var(--third-color);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  backdrop-filter: var(--glass-backdrop);
+  background: var(--glass-background);
+  border: var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  padding: 20px;
+  border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.project-title {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.project-desc {
+  font-size: 14px;
+  margin-bottom: 15px;
+  color: var(--fourth-color);
+}
+
+.project-btn {
+  backdrop-filter: var(--glass-backdrop);
+  background: var(--base-color);
+  border: var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  display: inline-block;
+  padding: 8px 16px;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.project-btn:hover {
+  background: var(--glass-background);
+}
