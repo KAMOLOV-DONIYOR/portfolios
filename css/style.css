@@ -42,7 +42,37 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-inline: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
 }
+
+/* faqat qo'shtirnoqlarni joylash uchun kerak bo'ladigan qism */
+.about-left-wrap {
+  position: relative;
+  padding: 28px 75px;          /* qo'shtirnoqlar uchun ichki bo'shliq */
+}
+
+.quote-open,
+.quote-close {
+  position: absolute;
+  width: 31px;
+  height: 31px;
+  pointer-events: none;
+  fill: var(--thered-color);
+}
+
+.quote-open {
+  top: 43px;                   /* kerak bo'lsa raqamlarni moslab o'zgartiring */
+  left: 34px;
+  transform: rotate(0deg);
+}
+
+.quote-close {
+  bottom: 43px;
+  right: 34px;
+  transform: rotate(180deg);   /* yopilish qo'shtirnoq */
+}
+
 
 .about-right-wrap {
   margin-right: 50px;
@@ -50,6 +80,21 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+#nice3d {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+#nice3d h1 {
+  color: var(--thered-color);
+  font-size: 45px;
+  font-weight: 400;
+  margin: 0;
 }
 
 .my-photo {
@@ -100,7 +145,7 @@
 .about-text {
   color: var(--thered-color);
   font-size: 45px;
-  font-weight: 400;  
+  font-weight: 400;
 }
 
 .about-logo-wrap {
@@ -116,6 +161,7 @@
   text-decoration: none;
   color: #fff;
   font-family: "Montserrat", sans-serif;
+  user-select: none;
 }
 
 .about-desc {
@@ -124,15 +170,16 @@
   font-size: 16px;
   color: var(--thered-color);
   font-weight: 400;
+  user-select: none;
 }
 
 .about-title {
   width: 100%;
   color: var(--thered-color);
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 400;
   text-align: justify;
-  line-height: 1.5; /* o‘qilishi oson bo‘lishi uchun */
+  line-height: 1.4; 
 }
 /* orbit */
 #tech-rotation {
@@ -142,9 +189,8 @@
   align-items: center;
   justify-content: center;
   background: url("../images/backgraunds/backgroundf.png") no-repeat center
-  center;
+    center;
   background-size: 100% 100%;
-  padding: 50px 0;
 }
 
 .tech-rotation-container {
@@ -193,7 +239,7 @@
   width: 90px;
   height: 90px;
   transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-175px)
-  rotate(calc(-1 * var(--angle)));
+    rotate(calc(-1 * var(--angle)));
   animation: tech-counter-rotate 20s linear infinite;
 }
 
@@ -227,11 +273,11 @@
 @keyframes tech-counter-rotate {
   from {
     transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-175px)
-    rotate(calc(-1 * var(--angle)));
+      rotate(calc(-1 * var(--angle)));
   }
   to {
     transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-175px)
-    rotate(calc(-1 * var(--angle) - 360deg));
+      rotate(calc(-1 * var(--angle) - 360deg));
   }
 }
 
@@ -253,20 +299,17 @@
     width: 70px;
     height: 70px;
     transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-125px)
-    rotate(calc(-1 * var(--angle)));
+      rotate(calc(-1 * var(--angle)));
   }
   @keyframes tech-counter-rotate {
     from {
       transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-125px)
-      rotate(calc(-1 * var(--angle)));
+        rotate(calc(-1 * var(--angle)));
     }
     to {
       transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-125px)
-      rotate(calc(-1 * var(--angle) - 360deg));
+        rotate(calc(-1 * var(--angle) - 360deg));
     }
   }
 }
 /* orbit */
-
-/* ================= RESPONSIVE ================= */
-

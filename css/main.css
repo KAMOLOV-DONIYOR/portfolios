@@ -163,7 +163,7 @@ a {
   top: -300px;
   left: 0;
   width: 100%;
-  height: 350px;
+  height: 100%;
   background: url("../images/backgraunds/headerblue.png") no-repeat center top;
   background-size: 118% auto;
   animation: slideDown 2s ease-out forwards;
@@ -390,11 +390,11 @@ a {
 }
 
 .icon-text:hover .github-icon {
-  fill: #00bfff; /* Hover rangi */
+  fill: var(--base-color); /* Hover rangi */
 }
 
 .icon-text:hover .github-text {
-  color: #00bfff; /* Hover rangi */
+  color: var(--base-color); /* Hover rangi */
 }
 /* header  */
 /* footer */
@@ -479,21 +479,6 @@ a {
 
   .about-right-wrap {
     margin-right: 0px !important;
-  }
-
-  .navbar {
-    width: 95%;
-    height: auto;
-    padding: 10px 15px;
-  }
-
-  .nav-wrap {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .nav-item {
-    margin: 5px;
   }
 
   .about-wrapper {
@@ -607,6 +592,31 @@ a {
 
 /* Juda kichik ekranlar (max-width: 480px) */
 @media (max-width: 480px) {
+  .container {
+    width: 100%;
+    padding-inline: 10px;
+  }
+
+  .logo {
+    font-size: 10px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-link {
+    font-size: 14px;
+    padding: 3px;
+  }
+
+  .navbar {
+    width: 80%;
+    padding-inline: 16px;
+  }  
+
+   .github-text {
+    display: none;
+  }
+
   .about-wrapper {
     gap: 20px;
   }

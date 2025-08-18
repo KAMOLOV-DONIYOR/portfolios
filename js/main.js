@@ -125,3 +125,4 @@ document.querySelectorAll(".dropdown a[data-lang]").forEach(link => {
 // Sahifa yuklanganda tarjimalarni chaqirish
 loadTranslations();
 // Translate Language Switcher
+
