@@ -223,7 +223,7 @@ a {
 /* header  */
 .navbar {
   position: relative;
-  width: 435px;
+  width: 400px;
   height: 65px;
   margin: 8px auto 16px;
   border-radius: 40px;
@@ -236,6 +236,14 @@ a {
   top: 14px;
   overflow: visible;
   z-index: 1000;
+}
+
+.nav-link-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-inline: 12px;
+  gap: 5px;
 }
 
 .nav-wrap {
@@ -333,7 +341,7 @@ a {
 }
 
 .logo {
-  margin: 0;
+  margin: 0 0 0 5px;
   padding: 0;
   text-decoration: none;
   color: #fff;

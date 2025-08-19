@@ -184,6 +184,7 @@
 #tech-rotation {
   width: 100%;
   min-height: 500px;
+  margin-top: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -227,7 +228,7 @@
   transform: translate(-50%, -50%);
   width: 350px;
   height: 350px;
-  animation: tech-rotate 20s linear infinite;
+  animation: tech-rotate 45s linear infinite;
 }
 
 /* Orbit element */
@@ -239,7 +240,7 @@
   height: 90px;
   transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-175px)
   rotate(calc(-1 * var(--angle)));
-  animation: tech-counter-rotate 20s linear infinite;
+  animation: tech-counter-rotate 45s linear infinite;
 }
 
 .tech-icon {
@@ -271,11 +272,11 @@
 
 @keyframes tech-counter-rotate {
   from {
-    transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-175px)
+    transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-210px)
     rotate(calc(-1 * var(--angle)));
   }
   to {
-    transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-175px)
+    transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-210px)
     rotate(calc(-1 * var(--angle) - 360deg));
   }
 }
