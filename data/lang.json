@@ -1,8 +1,8 @@
 {
   "uz": {
     "aboutTitle": "Salom, mening ismim Kamolov Doniyor, men frontend dasturchiman, bu mening PORTFOLIO web saytim.",
-    "aboutDesc": "Men frontend dasturchiman. Asosiy bilimlarim HTML, CSS va JavaScript dasturlash tillariga asoslangan. Bundan tashqari, Bootstrap, GitHub va Swiper bilan ishlash tajribasiga egaman. Kelajakda Senior darajaga chiqib, o‘z IT kompaniyamni ochishni maqsad qilganman. Shaxsiy hayotimda muntazam ravishda sport bilan shug‘ullanaman, bilyard o‘ynashni yaxshi ko‘raman va doimo o‘z ustimda ishlashga intilaman.",
-    "iknowTitle": "Men Bilaman",
+    "aboutDesc": "Men frontend dasturchiman. Asosiy bilimlarim HTML, CSS va JavaScript dasturlash tillariga asoslangan. Bundan tashqari, Bootstrap, GitHub va Figma bilan ishlash tajribasiga egaman. Kelajakda Senior darajaga chiqib, o‘z IT kompaniyamni ochishni maqsad qilganman. Shaxsiy hayotimda muntazam ravishda sport bilan shug‘ullanaman, bilyard o‘ynashni yaxshi ko‘raman va doimo o‘z ustimda ishlashga intilaman.",
+    "iknowTitle": "Men foydalanadigan asboblar va texnologiyalar",
     "projectDesc": "Men ushbu loyihani frontend texnologiyalari yordamida bosqichma-bosqich ishlab chiqdim, jamoaviy ishlarda ishtirok etganman va zamonaviy dizayn prinsiplari asosida yaratilishini ta’minladim. Loyihaning asosiy e’tibori interaktiv elementlar va foydalanuvchi qulayligiga qaratilgan.",
     "projectsSection": "Mening loyihalarim",
     "project1Desc": "Mening birinchi loyiham HTML va CSS bilan yaratilgan.",
@@ -12,8 +12,8 @@
   },
   "ru": {
     "aboutTitle": "Здравствуйте, меня зовут Камолов Даниёр, я фронтенд-разработчик, это мой сайт PORTFOLIO.",
-    "aboutDesc": "Я фронтенд-разработчик. Мои базовые знания основаны на языках программирования HTML, CSS и JavaScript. Кроме того, у меня есть опыт работы с Bootstrap, GitHub и Swiper. В будущем я планирую стать Senior и открыть собственную IT-компанию. В личной жизни я регулярно занимаюсь спортом, люблю играть в бильярд и всегда стремлюсь совершенствоваться.",
-    "iknowTitle": "Я знаю",
+    "aboutDesc": "Я фронтенд-разработчик. Мои базовые знания основаны на языках программирования HTML, CSS и JavaScript. Кроме того, у меня есть опыт работы с Bootstrap, GitHub и Figma. В будущем я планирую стать Senior и открыть собственную IT-компанию. В личной жизни я регулярно занимаюсь спортом, люблю играть в бильярд и всегда стремлюсь совершенствоваться.",
+    "iknowTitle": "Инструменты и технологии, которые я использую",
     "projectDesc": "Я разработал этот проект пошагово с использованием frontend технологий, принимал участие в командной работе и обеспечил соответствие дизайна современным принципам. Основное внимание проекта уделено интерактивным элементам и удобству пользователя.",
     "projectsSection": "Мои проекты",
     "project1Desc": "Мой первый проект — Milliy, созданный с использованием HTML и CSS.",
@@ -23,8 +23,8 @@
   },
   "en": {
     "aboutTitle": "Hello, my name is Kamolov Daniyor, I am a frontend developer, this is my PORTFOLIO website.",
-    "aboutDesc": "I am a frontend developer. My basic knowledge is based on HTML, CSS and JavaScript. Additionally, I have experience with Bootstrap, GitHub and Swiper. In the future, I aim to become a Senior and open my own IT company. In my personal life, I regularly play sports, enjoy playing billiards, and always strive for self-improvement.",
-    "iknowTitle": "I Know",
+    "aboutDesc": "I am a frontend developer. My basic knowledge is based on HTML, CSS and JavaScript. Additionally, I have experience with Bootstrap, GitHub and Figma. In the future, I aim to become a Senior and open my own IT company. In my personal life, I regularly play sports, enjoy playing billiards, and always strive for self-improvement.",
+    "iknowTitle": "Tools and Technoligies i use",
     "projectDesc": "I developed this project step by step using frontend technologies, participated in team collaboration, and ensured its design adheres to modern principles. The project emphasizes interactive elements and user experience.",
     "projectsSection": "My Projects",
     "project1Desc": "My first project is a Milliy built with HTML and CSS.",
