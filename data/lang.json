@@ -1,14 +1,35 @@
 {
   "uz": {
-    "title": "Salom Mening ismim Kamolov Doniyor, frontend dasturchiman, bu PORTFOLIO web saytim.",
-    "desc": "Men Frontend dasturchiman. Asosiy bilimlarim HTML, CSS va JavaScript dasturlash tillariga asoslangan. Bundan tashqari, Bootstrap, GitHub va Swiper bilan ishlash tajribasiga egaman. Kelajakda Senior darajaga chiqib, o‘z IT kompaniyamni ochishni maqsad qilganman. Shaxsiy hayotimda muntazam ravishda sport bilan shug‘ullanaman. Bilyard o‘yinini yaxshi ko‘raman va doimo o‘z ustimda ishlashga intilaman."
+    "aboutTitle": "Salom, mening ismim Kamolov Doniyor, men frontend dasturchiman, bu mening PORTFOLIO web saytim.",
+    "aboutDesc": "Men frontend dasturchiman. Asosiy bilimlarim HTML, CSS va JavaScript dasturlash tillariga asoslangan. Bundan tashqari, Bootstrap, GitHub va Swiper bilan ishlash tajribasiga egaman. Kelajakda Senior darajaga chiqib, o‘z IT kompaniyamni ochishni maqsad qilganman. Shaxsiy hayotimda muntazam ravishda sport bilan shug‘ullanaman, bilyard o‘ynashni yaxshi ko‘raman va doimo o‘z ustimda ishlashga intilaman.",
+    "iknowTitle": "Men Bilaman",
+    "projectDesc": "Men ushbu loyihani frontend texnologiyalari yordamida bosqichma-bosqich ishlab chiqdim, jamoaviy ishlarda ishtirok etganman va zamonaviy dizayn prinsiplari asosida yaratilishini ta’minladim. Loyihaning asosiy e’tibori interaktiv elementlar va foydalanuvchi qulayligiga qaratilgan.",
+    "projectsSection": "Mening loyihalarim",
+    "project1Desc": "Mening birinchi loyiham HTML va CSS bilan yaratilgan.",
+    "project2Desc": "JSON asosida ishlaydigan onlayn quiz ilovasi.",
+    "project3Desc": "HTML, CSS va JS bilan ishlangan demo/onlayn test sayti.",
+    "liveDemo": "Jonli Ko‘rsatma"
   },
   "ru": {
-    "title": "Здравствуйте, меня зовут Камолов Даниёр, я frontend-разработчик, это мой сайт ПОРТФОЛИО.",
-    "desc": "Я фронтенд-разработчик. Мои базовые знания основаны на языках программирования HTML, CSS и JavaScript. Кроме того, у меня есть опыт работы с Bootstrap, GitHub и Swiper. В будущем я планирую стать Senior и открыть собственную IT-компанию. В личной жизни я регулярно занимаюсь спортом. Люблю играть в бильярд и всегда стремлюсь к самосовершенствованию."
+    "aboutTitle": "Здравствуйте, меня зовут Камолов Даниёр, я фронтенд-разработчик, это мой сайт PORTFOLIO.",
+    "aboutDesc": "Я фронтенд-разработчик. Мои базовые знания основаны на языках программирования HTML, CSS и JavaScript. Кроме того, у меня есть опыт работы с Bootstrap, GitHub и Swiper. В будущем я планирую стать Senior и открыть собственную IT-компанию. В личной жизни я регулярно занимаюсь спортом, люблю играть в бильярд и всегда стремлюсь совершенствоваться.",
+    "iknowTitle": "Я знаю",
+    "projectDesc": "Я разработал этот проект пошагово с использованием frontend технологий, принимал участие в командной работе и обеспечил соответствие дизайна современным принципам. Основное внимание проекта уделено интерактивным элементам и удобству пользователя.",
+    "projectsSection": "Мои проекты",
+    "project1Desc": "Мой первый проект — Milliy, созданный с использованием HTML и CSS.",
+    "project2Desc": "Онлайн-приложение для викторин с вопросами на основе JSON.",
+    "project3Desc": "Демо/онлайн тестовый сайт с использованием HTML, CSS и JS.",
+    "liveDemo": "Демонстрация"
   },
   "en": {
-    "title": "Hello, my name is Kamolov Daniyor, I am a frontend developer, this is my PORTFOLIO website.",
-    "desc": "I am a Frontend developer. My basic knowledge is based on HTML, CSS and JavaScript programming languages. In addition, I have experience working with Bootstrap, GitHub and Swiper. In the future, I aim to become a Senior and open my own IT company. In my personal life, I regularly play sports. I love playing billiards and always strive to work on myself."
+    "aboutTitle": "Hello, my name is Kamolov Daniyor, I am a frontend developer, this is my PORTFOLIO website.",
+    "aboutDesc": "I am a frontend developer. My basic knowledge is based on HTML, CSS and JavaScript. Additionally, I have experience with Bootstrap, GitHub and Swiper. In the future, I aim to become a Senior and open my own IT company. In my personal life, I regularly play sports, enjoy playing billiards, and always strive for self-improvement.",
+    "iknowTitle": "I Know",
+    "projectDesc": "I developed this project step by step using frontend technologies, participated in team collaboration, and ensured its design adheres to modern principles. The project emphasizes interactive elements and user experience.",
+    "projectsSection": "My Projects",
+    "project1Desc": "My first project is a Milliy built with HTML and CSS.",
+    "project2Desc": "An online quiz app with JSON-based questions.",
+    "project3Desc": "An online demo/avto test site with HTML, CSS and JS.",
+    "liveDemo": "Live Demo"
   }
 }

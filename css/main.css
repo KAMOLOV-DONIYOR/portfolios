@@ -279,14 +279,18 @@ a {
 .nav-link:hover {
   color: var(--base-color);
 }
+
+.nav-link button a {
+  display: flex;
+}
 /* Dropdown Menu */
 .dropdown {
   position: absolute;
   top: 100%;
   left: -40px;
-  min-width: 200px;
+  min-width: 160px;
   padding: 10px 0;
-  border-radius: 30px;
+  border-radius: 22px;
   opacity: 0;
   pointer-events: none;
   transition: all 0.25s ease;
@@ -309,7 +313,7 @@ a {
 
 .dropdown a {
   display: block;
-  padding: 10px 18px;
+  padding: 6px 14px;
   color: white;
   text-decoration: none;
   font-size: 14px;
@@ -579,6 +583,7 @@ a {
 /* Juda kichik ekranlar (max-width: 480px) */
 @media (max-width: 480px) {
   
+   
    .header-bg {
     background-size: 300% auto;
   }

@@ -86,42 +86,70 @@ let translations = {};
 
 async function loadTranslations() {
   try {
-const res = await fetch("data/lang.json");
+    const res = await fetch("data/lang.json");
     translations = await res.json();
     
-    const savedLang = localStorage.getItem("selectedLang") || "en";
+    const savedLang = localStorage.getItem("selectedLang") || "SystemLang";
     setLanguage(savedLang);
   } catch (err) {
-    console.error("Tarjima faylini yuklashda xato:", err);
+    console.error("Error data/lang.json:", err);
   }
 }
 
+function getSystemLanguage() {
+  // Brauzer tilini olish
+  const browserLang = navigator.language || navigator.userLanguage;
+  const langCode = browserLang.split('-')[0]; // 'en-US' -> 'en'
+  
+  // Mavjud tillar ro'yxati
+  const supportedLangs = ['en', 'ru', 'uz'];
+  
+  // Agar system tili mavjud bo'lsa, uni qaytarish
+  if (supportedLangs.includes(langCode)) {
+    return langCode;
+  }
+  
+  // Aks holda English qaytarish
+  return 'en';
+}
+
 function setLanguage(lang) {
-  if (!translations[lang]) return;
+  let actualLang = lang;
+  
+  // Agar "SystemLang" tanlangan bo'lsa, system tilini aniqlash
+  if (lang === "SystemLang") {
+    actualLang = getSystemLanguage();
+  }
+  
+  if (!translations[actualLang]) return;
   
   document.querySelectorAll("[lang]").forEach(el => {
     const key = el.getAttribute("lang");
-    if (translations[lang][key]) {
-      el.textContent = translations[lang][key];
+    if (translations[actualLang][key]) {
+      el.textContent = translations[actualLang][key];
     }
   });
   
-  localStorage.setItem("selectedLang", lang);
-  document.getElementById("selected-lang").textContent =
-  lang === "en" ? "English" :
-  lang === "ru" ? "Russian" :
-  "Uzbek";
+  localStorage.setItem("selectedLang", lang); // Asl tanlangan qiymatni saqlash
+  
+  // Dropdown'da ko'rsatiladigan matn
+  const displayText = 
+    lang === "SystemLang" ? "System" :
+    lang === "en" ? "English" :
+    lang === "ru" ? "Russian" :
+    "Uzbek";
+    
+  document.getElementById("selected-lang").textContent = displayText;
 }
 
 // Dropdown til tanlash event
 document.querySelectorAll(".dropdown a[data-lang]").forEach(link => {
   link.addEventListener("click", e => {
     e.preventDefault();
-    setLanguage(link.getAttribute("data-lang"));
+    const selectedLang = link.getAttribute("data-lang");
+    setLanguage(selectedLang);
   });
 });
 
-// Sahifa yuklanganda tarjimalarni chaqirish
 loadTranslations();
 // Translate Language Switcher
-
