@@ -1,22 +1,33 @@
-// ripple effekti qo'shish
-document.querySelectorAll(".ripple").forEach(button => {
-  button.addEventListener("click", function (e) {
-    const circle = document.createElement("span");
-    const rect = this.getBoundingClientRect();
-    const size = Math.max(rect.width, rect.height);
+// js 
+function showToast(message) {
+  const toast = document.getElementById("Toast");
+  const notif = document.getElementById("toast-notif");
+  
+  notif.innerText = message; // Matnni yozish
+  toast.classList.add("show");
+  
+  // 2 soniyadan keyin yopiladi
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, 3000);
+}
 
-    circle.style.width = circle.style.height = `${size}px`;
-    circle.style.left = `${e.clientX - rect.left - size / 2}px`;
-    circle.style.top = `${e.clientY - rect.top - size / 2}px`;
-
-    this.appendChild(circle);
-
-    setTimeout(() => circle.remove(), 600);
+// Hamma [toast] atributli elementlarni topamiz
+document.querySelectorAll("[toast]").forEach(el => {
+  el.addEventListener("click", () => {
+    const message = el.getAttribute("toast-text") || "OK!";
+    showToast(message);
   });
 });
 
-// ripple btn
+const copyText = document.getElementById("copyText");
 
+copyText.addEventListener("click", () => {
+  navigator.clipboard.writeText(copyText.innerText).then(() => {
+  });
+});
+
+// Toast funksiyasi
 const bar = document.getElementById("progress-bar");
 bar.style.transition = "width 1.2s ease-out";
 bar.style.width = "10%";
@@ -134,11 +145,11 @@ function setLanguage(lang) {
   
   // Dropdown'da ko'rsatiladigan matn
   const displayText = 
-    lang === "SystemLang" ? "System" :
-    lang === "en" ? "English" :
-    lang === "ru" ? "Russian" :
-    "Uzbek";
-    
+  lang === "SystemLang" ? "System" :
+  lang === "en" ? "English" :
+  lang === "ru" ? "Russian" :
+  "Uzbek";
+  
   document.getElementById("selected-lang").textContent = displayText;
 }
 
@@ -153,3 +164,4 @@ document.querySelectorAll(".dropdown a[data-lang]").forEach(link => {
 
 loadTranslations();
 // Translate Language Switcher
+

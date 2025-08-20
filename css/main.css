@@ -7,11 +7,16 @@
   --second-color: #0370be;
   --third-color: #cfe3f0;
   --fourth-color: #ccc;
+  --hover-background: rgba(255, 255, 255, 0.2);;
   --glass-backdrop: blur(6px);
   --glass-background: rgba(63, 81, 117, 0.2);
   --glass-border: 1px solid rgba(255, 255, 255, 0.2);
   --glass-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
+/* backdrop-filter: var(--glass-backdrop);
+background: var(--glass-background);
+border: var(--glass-border);
+box-shadow: var(--glass-shadow); */
 
 ::-webkit-scrollbar {
   width: 4px;
@@ -42,7 +47,7 @@ body {
   overflow-x: hidden;
 }
 .container {
-  width: 1240px;
+  width: 1140px;
   margin-inline: auto;
   padding-inline: 20px;
 }
@@ -58,6 +63,48 @@ a {
   align-items: center;
   gap: 3px;
 }
+
+#ToastContainer {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* toastlar orasidagi masofa */
+  z-index: 9999;
+}
+
+.toast {
+  position: fixed;
+  top: 20px; /* yuqorida chiqadi */
+  right: -300px; /* ekrandan tashqarida boshlanadi */
+  backdrop-filter: var(--glass-backdrop);
+  background: var(--glass-background);
+  border: var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  color: #39FF14;
+  padding: 10px 15px;
+  border-left: 3px solid #39FF14;
+  border-radius: 0 3px 3px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  opacity: 0;
+  transition: all 0.5s ease;
+  z-index: 9999;
+}
+
+.toast p {
+  margin: 0 0 3px 0;
+}
+
+.toast.show {
+  right: 20px; /* o‘ng tomondan ichkariga kiradi */
+  opacity: 1;
+}
+
 /* ripple btn */
 
 /* ripple btn */
@@ -135,7 +182,7 @@ a {
 
 .header-bg {
   position: absolute;
-  top: -300px;
+  /* top: -300px; */
   left: 0;
   width: 100%;
   height: 100%;
@@ -155,6 +202,7 @@ a {
   background-size: 120% auto;
   z-index: -1;
 }
+
 /* backgrounds, slidedown & blur */
 /* slide top */
 #backToTop {
@@ -311,7 +359,7 @@ a {
 
 .dropdown hr {
   border: var(--glass-border);
-  margin: 0;
+  margin: 4px 0;
 }
 
 .nav-item:hover .dropdown {
@@ -528,7 +576,7 @@ a {
 
 /* Mobil ekranlar (max-width: 768px) */
 @media (max-width: 768px) {
-   .header-bg {
+  .header-bg {
     background-size: 150% auto;
   }
   .skills {
@@ -591,8 +639,8 @@ a {
 /* Juda kichik ekranlar (max-width: 480px) */
 @media (max-width: 480px) {
   
-   
-   .header-bg {
+  
+  .header-bg {
     background-size: 300% auto;
   }
   

@@ -2,50 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Cursor Effect</title>
-  <style>
-    :root {
-      --base-color: #00bfff;
-      --second-color: #0370be;
-      --third-color: #cfe3f0;
-      --fourth-color: #ccc;
-      --glass-backdrop: blur(6px);
-      --glass-background: rgba(63, 81, 117, 0.2);
-      --glass-border: 1px solid rgba(255, 255, 255, 0.2);
-      --glass-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-    }
-
-    body {
-      margin: 0;
-      height: 100vh;
-      background: var(--third-color);
-      overflow: hidden;
-      font-family: Arial, sans-serif;
-    }
-
-    .cursor-effect {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      pointer-events: none;
-      background: radial-gradient(circle 80px at var(--x, 50%) var(--y, 50%), var(--base-color), transparent 60%);
-      transition: background 0.1s;
-      z-index: 9999;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <div class="cursor-effect"></div>
+  
+  <!-- Toast oynasi -->
+<div class="toast" id="Toast">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+    viewBox="0 0 24 24">
+    <path fill="currentColor" d="m9.55 18l-5.7-5.7l1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"/>
+  </svg>
+  <p id="toast-notif"></p>
+</div>
 
-  <script>
-    const effect = document.querySelector(".cursor-effect");
+<!-- Bosiladigan tugmalar -->
+<button toast toast-text="Til English ga o‘zgardi">English</button>
+<button toast toast-text="Til Russian ga o‘zgardi">Russian</button>
+<button toast toast-text="Til Uzbek ga o‘zgardi">Uzbek</button>
 
-    document.addEventListener("mousemove", (e) => {
-      effect.style.setProperty("--x", e.clientX + "px");
-      effect.style.setProperty("--y", e.clientY + "px");
-    });
-  </script>
+
+  <script src="../js/main.js"></script>
 </body>
 </html>

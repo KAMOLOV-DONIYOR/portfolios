@@ -1,21 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="site icon" href="./images/icons/siteicon.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="site icon" href="./images/icons/siteicon.png" />
   <title>PRO - PORTFOLIO</title>
-  <link rel="stylesheet" href="./css/main.css">
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/main.css" />
+  <link rel="stylesheet" href="./css/style.css" />
 </head>
 <body>
-  <div id="progress-bg"></div>
-  <div id="progress-bar"></div>
-  <div class="header-bg"></div>
-  <button id="backToTop" title="Go to top">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M12 21l0 -17.5"/><path d="M12 3l7 7M12 3l-7 7"/></g></svg>
-  </button>
-  <!-- header -->
   <!-- <div class="wrapper-signprime">
     <div class="singup blur" type="button">
       <img class="singup-img" src="" alt="">
@@ -36,9 +29,11 @@
           <button class="nav-link">Sections</button>
           <div class="dropdown">
             <a href="#aboutme">About me</a>
-            <hr>
+            <hr />
             <a href="#iknow">Tools & Tech.. i use</a>
             <a href="#mypro">My Projects</a>
+            <hr>
+            <a href="#contact">Contact Me</a>
           </div>
         </div>
         <div class="nav-item">
@@ -46,193 +41,391 @@
           <div class="dropdown">
             <a href="#">//...</a>
             <a href="#">//...</a>
-            <hr>
+            <hr />
             <a href="#">//...</a>
             <a href="#">//...</a>
           </div>
         </div>
         <div class="nav-item">
-          <button class="nav-link" id="selected-lang">English</button>
+          <button class="nav-link" id="selected-lang"></button>
           <div class="dropdown">
-            <a data-lang="en" href="">English</a>
-            <hr>
-            <a data-lang="ru" href="">Russian</a>
-            
-            <a data-lang="uz" href="">Uzbek</a>
-            <hr>
-            <a data-lang="SystemLang" href="">System</a>
+            <a toast toast-text="Changed to English" data-lang="en" href="">English</a>
+            <hr />
+            <a toast toast-text="Changed to Russian" data-lang="ru" href="">Russian</a>
+            <a toast toast-text="Changed to Uzbek" data-lang="uz" href="">Uzbek</a>
+            <hr />
+            <a toast toast-text="Changed to System Language" data-lang="SystemLang" href="">System</a>
           </div>
         </div>
       </div>
-      <a class="icon-text" target="_blank" href="https://github.com/KAMOLOV-DONIYOR">
-        <svg class="github-icon" width="19" height="19" viewBox="0 0 19 19" xmlns="http://www.w3.org/2000/svg">
-          <path d="M9.60034 0.837158C4.63084 0.837158 0.600342 4.86691 0.600342 9.83716C0.600342 13.8137 3.17884 17.1872 6.75559 18.3774C7.20484 18.4607 7.35034 18.1817 7.35034 17.9447V16.2692C4.84684 16.8137 4.32559 15.2072 4.32559 15.2072C3.91609 14.1669 3.32584 13.8902 3.32584 13.8902C2.50909 13.3314 3.38809 13.3434 3.38809 13.3434C4.29184 13.4064 4.76734 14.2712 4.76734 14.2712C5.56984 15.6467 6.87259 15.2492 7.38634 15.0189C7.46659 14.4377 7.69984 14.0402 7.95784 13.8159C5.95909 13.5872 3.85759 12.8154 3.85759 9.36766C3.85759 8.38441 4.20934 7.58191 4.78459 6.95191C4.69159 6.72466 4.38334 5.80891 4.87234 4.56991C4.87234 4.56991 5.62834 4.32841 7.34809 5.49241C8.06584 5.29291 8.83534 5.19316 9.60034 5.18941C10.3653 5.19316 11.1356 5.29291 11.8548 5.49241C13.5731 4.32841 14.3276 4.56991 14.3276 4.56991C14.8173 5.80966 14.5091 6.72541 14.4161 6.95191C14.9936 7.58191 15.3423 8.38516 15.3423 9.36766C15.3423 12.8244 13.2371 13.5857 11.2331 13.8084C11.5556 14.0874 11.8503 14.6349 11.8503 15.4749V17.9447C11.8503 18.1839 11.9943 18.4652 12.4511 18.3767C16.0248 17.1849 18.6003 13.8122 18.6003 9.83716C18.6003 4.86691 14.5706 0.837158 9.60034 0.837158Z"/>
+      <a
+      class="icon-text"
+      target="_blank"
+      href="https://github.com/KAMOLOV-DONIYOR"
+      >
+      <svg
+      class="github-icon"
+      width="19"
+      height="19"
+      viewBox="0 0 19 19"
+      xmlns="http://www.w3.org/2000/svg"
+      >
+      <path
+      d="M9.60034 0.837158C4.63084 0.837158 0.600342 4.86691 0.600342 9.83716C0.600342 13.8137 3.17884 17.1872 6.75559 18.3774C7.20484 18.4607 7.35034 18.1817 7.35034 17.9447V16.2692C4.84684 16.8137 4.32559 15.2072 4.32559 15.2072C3.91609 14.1669 3.32584 13.8902 3.32584 13.8902C2.50909 13.3314 3.38809 13.3434 3.38809 13.3434C4.29184 13.4064 4.76734 14.2712 4.76734 14.2712C5.56984 15.6467 6.87259 15.2492 7.38634 15.0189C7.46659 14.4377 7.69984 14.0402 7.95784 13.8159C5.95909 13.5872 3.85759 12.8154 3.85759 9.36766C3.85759 8.38441 4.20934 7.58191 4.78459 6.95191C4.69159 6.72466 4.38334 5.80891 4.87234 4.56991C4.87234 4.56991 5.62834 4.32841 7.34809 5.49241C8.06584 5.29291 8.83534 5.19316 9.60034 5.18941C10.3653 5.19316 11.1356 5.29291 11.8548 5.49241C13.5731 4.32841 14.3276 4.56991 14.3276 4.56991C14.8173 5.80966 14.5091 6.72541 14.4161 6.95191C14.9936 7.58191 15.3423 8.38516 15.3423 9.36766C15.3423 12.8244 13.2371 13.5857 11.2331 13.8084C11.5556 14.0874 11.8503 14.6349 11.8503 15.4749V17.9447C11.8503 18.1839 11.9943 18.4652 12.4511 18.3767C16.0248 17.1849 18.6003 13.8122 18.6003 9.83716C18.6003 4.86691 14.5706 0.837158 9.60034 0.837158Z"
+      />
+    </svg>
+    <span class="github-text">GitHub</span>
+  </a>
+</div>
+</div>
+<!-- header -->
+<!-- content start ------------------------------------>
+<section class="about-section">
+  <div class="container">
+    <div class="intro-text">
+      <div>
+        <p lang="aboutTitle" class="about-text"></p>
+        <p></p>
+      </div>
+      
+      <div class="about-logo-wrap df">
+        <p class="about-logo">PORTFOLIO</p>
+        <p class="about-desc">released on August 07, 2025</p>
+      </div>
+    </div>
+    <div id="aboutme" class="about-wrapper margin-top">
+      <img src="https://placehold.co/404" alt="" class="my-photo" />
+      <!-- <img src="./images/ima" alt="" class="my-photo"> -->
+      <div class="about-left-wrap">
+        <!-- ochilish qo'shtirnoq (matn boshida, chap-ustun burchak) -->
+        <svg
+        class="quote-open"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 31 31"
+        aria-hidden="true"
+        >
+        <path
+        d="M30.5180534,0 L30.5180534,5.65149137 C29.010989,6.50549451 27.8681319,7.56043956 27.0894819,8.81632653 C26.310832,10.0722135 25.7205651,11.4034537 25.3186813,12.8100471 C24.9167975,14.2166405 24.7158556,15.7739403 24.7158556,17.4819466 L30.5180534,17.4819466 L30.5180534,29.8398744 L18.1601256,29.8398744 L18.1601256,22.1538462 C18.1601256,17.5321821 18.599686,14.0156986 19.4788069,11.6043956 C20.3579278,9.19309262 21.7017268,6.97017268 23.5102041,4.93563579 C25.3186813,2.9010989 27.6546311,1.25588697 30.5180534,0 Z M12.3579278,0 L12.3579278,5.65149137 C10.8508634,6.50549451 9.69544741,7.56043956 8.89167975,8.81632653 C8.08791209,10.0722135 7.48508634,11.4034537 7.08320251,12.8100471 C6.68131868,14.2166405 6.48037677,15.7739403 6.48037677,17.4819466 L12.3579278,17.4819466 L12.3579278,29.8398744 L0,29.8398744 L0,22.1538462 C0,17.5321821 0.43956044,14.0156986 1.31868132,11.6043956 C2.1978022,9.19309262 3.54160126,6.97017268 5.35007849,4.93563579 C7.15855573,2.9010989 9.49450549,1.25588697 12.3579278,0 Z"
+        ></path>
+      </svg>
+      
+      <p lang="aboutDesc" class="about-title"></p>
+      
+      <!-- yopilish qo'shtirnoq (matn oxirida, o'ng-pastki burchak) -->
+      <svg
+      class="quote-close"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 31 31"
+      aria-hidden="true"
+      >
+      <path
+      d="M30.5180534,0 L30.5180534,5.65149137 C29.010989,6.50549451 27.8681319,7.56043956 27.0894819,8.81632653 C26.310832,10.0722135 25.7205651,11.4034537 25.3186813,12.8100471 C24.9167975,14.2166405 24.7158556,15.7739403 24.7158556,17.4819466 L30.5180534,17.4819466 L30.5180534,29.8398744 L18.1601256,29.8398744 L18.1601256,22.1538462 C18.1601256,17.5321821 18.599686,14.0156986 19.4788069,11.6043956 C20.3579278,9.19309262 21.7017268,6.97017268 23.5102041,4.93563579 C25.3186813,2.9010989 27.6546311,1.25588697 30.5180534,0 Z M12.3579278,0 L12.3579278,5.65149137 C10.8508634,6.50549451 9.69544741,7.56043956 8.89167975,8.81632653 C8.08791209,10.0722135 7.48508634,11.4034537 7.08320251,12.8100471 C6.68131868,14.2166405 6.48037677,15.7739403 6.48037677,17.4819466 L12.3579278,17.4819466 L12.3579278,29.8398744 L0,29.8398744 L0,22.1538462 C0,17.5321821 0.43956044,14.0156986 1.31868132,11.6043956 C2.1978022,9.19309262 3.54160126,6.97017268 5.35007849,4.93563579 C7.15855573,2.9010989 9.49450549,1.25588697 12.3579278,0 Z"
+      ></path>
+    </svg>
+  </div>
+</div>
+</div>
+</section>
+<section class="iknow" id="iknow">
+  <h1 lang="iknowTitle" class="section-title"></h1>
+  <div id="tech-rotation">
+    <div class="tech-rotation-container">
+      <!-- center VS Code -->
+      <div class="tech-center-icon">
+        <img
+        src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg"
+        alt="VS Code"
+        class="tech-vscode-icon"
+        />
+      </div>
+      
+      <!-- rotation icons -->
+      <div class="tech-rotating-ring">
+        <!-- GitHub icon qo'shildi -->
+        <div class="tech-orbit-icon" style="--angle: 0deg">
+          <svg
+          class="tech-icon"
+          fill="#fff"
+          width="19"
+          height="19"
+          viewBox="0 0 19 19"
+          xmlns="http://www.w3.org/2000/svg"
+          >
+          <path
+          d="M9.60034 0.837158C4.63084 0.837158 0.600342 4.86691 0.600342 9.83716C0.600342 13.8137 3.17884 17.1872 6.75559 18.3774C7.20484 18.4607 7.35034 18.1817 7.35034 17.9447V16.2692C4.84684 16.8137 4.32559 15.2072 4.32559 15.2072C3.91609 14.1669 3.32584 13.8902 3.32584 13.8902C2.50909 13.3314 3.38809 13.3434 3.38809 13.3434C4.29184 13.4064 4.76734 14.2712 4.76734 14.2712C5.56984 15.6467 6.87259 15.2492 7.38634 15.0189C7.46659 14.4377 7.69984 14.0402 7.95784 13.8159C5.95909 13.5872 3.85759 12.8154 3.85759 9.36766C3.85759 8.38441 4.20934 7.58191 4.78459 6.95191C4.69159 6.72466 4.38334 5.80891 4.87234 4.56991C4.87234 4.56991 5.62834 4.32841 7.34809 5.49241C8.06584 5.29291 8.83534 5.19316 9.60034 5.18941C10.3653 5.19316 11.1356 5.29291 11.8548 5.49241C13.5731 4.32841 14.3276 4.56991 14.3276 4.56991C14.8173 5.80966 14.5091 6.72541 14.4161 6.95191C14.9936 7.58191 15.3423 8.38516 15.3423 9.36766C15.3423 12.8244 13.2371 13.5857 11.2331 13.8084C11.5556 14.0874 11.8503 14.6349 11.8503 15.4749V17.9447C11.8503 18.1839 11.9943 18.4652 12.4511 18.3767C16.0248 17.1849 18.6003 13.8122 18.6003 9.83716C18.6003 4.86691 14.5706 0.837158 9.60034 0.837158Z"
+          />
         </svg>
-        <span class="github-text">GitHub</span>
-      </a>
+      </div>
+      <div class="tech-orbit-icon" style="--angle: 45deg">
+        <img
+        src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg"
+        alt="HTML5"
+        class="tech-icon"
+        />
+      </div>
+      <div class="tech-orbit-icon" style="--angle: 90deg">
+        <img
+        src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg"
+        alt="CSS3"
+        class="tech-icon"
+        />
+      </div>
+      <div class="tech-orbit-icon" style="--angle: 135deg">
+        <img
+        src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
+        alt="JavaScript"
+        class="tech-icon"
+        />
+      </div>
+      <div class="tech-orbit-icon" style="--angle: 180deg">
+        <img
+        src="https://upload.wikimedia.org/wikipedia/commons/9/96/Sass_Logo_Color.svg"
+        alt="SCSS"
+        class="tech-icon"
+        />
+      </div>
+      <div class="tech-orbit-icon" style="--angle: 225deg">
+        <img
+        src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg"
+        alt="Bootstrap"
+        class="tech-icon"
+        />
+      </div>
+      <div class="tech-orbit-icon" style="--angle: 270deg">
+        <img
+        src="https://swiperjs.com/images/swiper-logo.svg"
+        alt="SwiperJS"
+        class="tech-icon"
+        />
+      </div>
+      <div class="tech-orbit-icon" style="--angle: 315deg">
+        <img
+        src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg"
+        alt="Figma"
+        class="tech-icon"
+        />
+      </div>
     </div>
   </div>
-  <!-- header -->
-  <!-- content start-->
-  <section class="about-section">
-    <div class="container">  
-      <div class="intro-text">
-        <div>
-          <p lang="aboutTitle" class="about-text"><p>
-          </div>
-          <div class="about-logo-wrap df">
-            <p class="about-logo">PORTFOLIO</p><p class="about-desc">released on August 07, 2025</p>
-          </div>
-        </div>
-        <div id="aboutme" class="about-wrapper margin-top">
-          <img src="https://placehold.co/404" alt="" class="my-photo">
-          <!-- <img src="./images/ima" alt="" class="my-photo"> -->
-          <div class="about-left-wrap">
-            <!-- ochilish qo'shtirnoq (matn boshida, chap-ustun burchak) -->
-            <svg class="quote-open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 31" aria-hidden="true">
-              <path d="M30.5180534,0 L30.5180534,5.65149137 C29.010989,6.50549451 27.8681319,7.56043956 27.0894819,8.81632653 C26.310832,10.0722135 25.7205651,11.4034537 25.3186813,12.8100471 C24.9167975,14.2166405 24.7158556,15.7739403 24.7158556,17.4819466 L30.5180534,17.4819466 L30.5180534,29.8398744 L18.1601256,29.8398744 L18.1601256,22.1538462 C18.1601256,17.5321821 18.599686,14.0156986 19.4788069,11.6043956 C20.3579278,9.19309262 21.7017268,6.97017268 23.5102041,4.93563579 C25.3186813,2.9010989 27.6546311,1.25588697 30.5180534,0 Z M12.3579278,0 L12.3579278,5.65149137 C10.8508634,6.50549451 9.69544741,7.56043956 8.89167975,8.81632653 C8.08791209,10.0722135 7.48508634,11.4034537 7.08320251,12.8100471 C6.68131868,14.2166405 6.48037677,15.7739403 6.48037677,17.4819466 L12.3579278,17.4819466 L12.3579278,29.8398744 L0,29.8398744 L0,22.1538462 C0,17.5321821 0.43956044,14.0156986 1.31868132,11.6043956 C2.1978022,9.19309262 3.54160126,6.97017268 5.35007849,4.93563579 C7.15855573,2.9010989 9.49450549,1.25588697 12.3579278,0 Z"></path>
-            </svg>
-            
-            <p lang="aboutDesc" class="about-title">
-              
-            </p>
-            
-            <!-- yopilish qo'shtirnoq (matn oxirida, o'ng-pastki burchak) -->
-            <svg class="quote-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 31" aria-hidden="true">
-              <path d="M30.5180534,0 L30.5180534,5.65149137 C29.010989,6.50549451 27.8681319,7.56043956 27.0894819,8.81632653 C26.310832,10.0722135 25.7205651,11.4034537 25.3186813,12.8100471 C24.9167975,14.2166405 24.7158556,15.7739403 24.7158556,17.4819466 L30.5180534,17.4819466 L30.5180534,29.8398744 L18.1601256,29.8398744 L18.1601256,22.1538462 C18.1601256,17.5321821 18.599686,14.0156986 19.4788069,11.6043956 C20.3579278,9.19309262 21.7017268,6.97017268 23.5102041,4.93563579 C25.3186813,2.9010989 27.6546311,1.25588697 30.5180534,0 Z M12.3579278,0 L12.3579278,5.65149137 C10.8508634,6.50549451 9.69544741,7.56043956 8.89167975,8.81632653 C8.08791209,10.0722135 7.48508634,11.4034537 7.08320251,12.8100471 C6.68131868,14.2166405 6.48037677,15.7739403 6.48037677,17.4819466 L12.3579278,17.4819466 L12.3579278,29.8398744 L0,29.8398744 L0,22.1538462 C0,17.5321821 0.43956044,14.0156986 1.31868132,11.6043956 C2.1978022,9.19309262 3.54160126,6.97017268 5.35007849,4.93563579 C7.15855573,2.9010989 9.49450549,1.25588697 12.3579278,0 Z"></path>
-            </svg>
-          </div>
-          
-        </div>
+</div>
+</section>
+<section class="projects-desc">
+  <div class="container">
+    <div class="projects-description">
+      <svg
+      class="quote-open"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 31 31"
+      aria-hidden="true"
+      >
+      <path
+      d="M30.5180534,0 L30.5180534,5.65149137 C29.010989,6.50549451 27.8681319,7.56043956 27.0894819,8.81632653 C26.310832,10.0722135 25.7205651,11.4034537 25.3186813,12.8100471 C24.9167975,14.2166405 24.7158556,15.7739403 24.7158556,17.4819466 L30.5180534,17.4819466 L30.5180534,29.8398744 L18.1601256,29.8398744 L18.1601256,22.1538462 C18.1601256,17.5321821 18.599686,14.0156986 19.4788069,11.6043956 C20.3579278,9.19309262 21.7017268,6.97017268 23.5102041,4.93563579 C25.3186813,2.9010989 27.6546311,1.25588697 30.5180534,0 Z M12.3579278,0 L12.3579278,5.65149137 C10.8508634,6.50549451 9.69544741,7.56043956 8.89167975,8.81632653 C8.08791209,10.0722135 7.48508634,11.4034537 7.08320251,12.8100471 C6.68131868,14.2166405 6.48037677,15.7739403 6.48037677,17.4819466 L12.3579278,17.4819466 L12.3579278,29.8398744 L0,29.8398744 L0,22.1538462 C0,17.5321821 0.43956044,14.0156986 1.31868132,11.6043956 C2.1978022,9.19309262 3.54160126,6.97017268 5.35007849,4.93563579 C7.15855573,2.9010989 9.49450549,1.25588697 12.3579278,0 Z"
+      ></path>
+    </svg>
+    <p lang="projectDesc" class="about-title"></p>
+    <svg
+    class="quote-close"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 31 31"
+    aria-hidden="true"
+    >
+    <path
+    d="M30.5180534,0 L30.5180534,5.65149137 C29.010989,6.50549451 27.8681319,7.56043956 27.0894819,8.81632653 C26.310832,10.0722135 25.7205651,11.4034537 25.3186813,12.8100471 C24.9167975,14.2166405 24.7158556,15.7739403 24.7158556,17.4819466 L30.5180534,17.4819466 L30.5180534,29.8398744 L18.1601256,29.8398744 L18.1601256,22.1538462 C18.1601256,17.5321821 18.599686,14.0156986 19.4788069,11.6043956 C20.3579278,9.19309262 21.7017268,6.97017268 23.5102041,4.93563579 C25.3186813,2.9010989 27.6546311,1.25588697 30.5180534,0 Z M12.3579278,0 L12.3579278,5.65149137 C10.8508634,6.50549451 9.69544741,7.56043956 8.89167975,8.81632653 C8.08791209,10.0722135 7.48508634,11.4034537 7.08320251,12.8100471 C6.68131868,14.2166405 6.48037677,15.7739403 6.48037677,17.4819466 L12.3579278,17.4819466 L12.3579278,29.8398744 L0,29.8398744 L0,22.1538462 C0,17.5321821 0.43956044,14.0156986 1.31868132,11.6043956 C2.1978022,9.19309262 3.54160126,6.97017268 5.35007849,4.93563579 C7.15855573,2.9010989 9.49450549,1.25588697 12.3579278,0 Z"
+    ></path>
+  </svg>
+</div>
+</div>
+</section>
+<section id="mypro" class="projects-section">
+  <div class="container">
+    <h2 lang="projectsSection" class="section-title"></h2>
+    
+    <div class="projects-grid">
+      <!-- Project 1 -->
+      <div class="project-card">
+        <img src="./images/image/imgmilliy.png" class="project-img" />
+        <h3 class="project-title">Uzbek Milliy</h3>
+        <p lang="project1Desc" class="project-desc"></p>
+        <a
+        lang="liveDemo"
+        href="https://kamolov-doniyor.github.io/myfirstpro/"
+        target="_blank"
+        class="project-btn"
+        >Live Demo</a
+        >
       </div>
-    </section>
-    <section class="iknow" id="iknow">
-      <h1 lang="iknowTitle" class="about-text"></h1>
-      <div id="tech-rotation">
-        <div class="tech-rotation-container">
-          <!-- center VS Code -->
-          <div class="tech-center-icon">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg"
-            alt="VS Code" class="tech-vscode-icon">
-          </div>
-          
-          <!-- rotation icons -->
-          <div class="tech-rotating-ring">
-            <!-- GitHub icon qo'shildi -->
-            <div class="tech-orbit-icon" style="--angle: 0deg;">
-              <svg class="tech-icon" fill="#fff" width="19" height="19" viewBox="0 0 19 19" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9.60034 0.837158C4.63084 0.837158 0.600342 4.86691 0.600342 9.83716C0.600342 13.8137 3.17884 17.1872 6.75559 18.3774C7.20484 18.4607 7.35034 18.1817 7.35034 17.9447V16.2692C4.84684 16.8137 4.32559 15.2072 4.32559 15.2072C3.91609 14.1669 3.32584 13.8902 3.32584 13.8902C2.50909 13.3314 3.38809 13.3434 3.38809 13.3434C4.29184 13.4064 4.76734 14.2712 4.76734 14.2712C5.56984 15.6467 6.87259 15.2492 7.38634 15.0189C7.46659 14.4377 7.69984 14.0402 7.95784 13.8159C5.95909 13.5872 3.85759 12.8154 3.85759 9.36766C3.85759 8.38441 4.20934 7.58191 4.78459 6.95191C4.69159 6.72466 4.38334 5.80891 4.87234 4.56991C4.87234 4.56991 5.62834 4.32841 7.34809 5.49241C8.06584 5.29291 8.83534 5.19316 9.60034 5.18941C10.3653 5.19316 11.1356 5.29291 11.8548 5.49241C13.5731 4.32841 14.3276 4.56991 14.3276 4.56991C14.8173 5.80966 14.5091 6.72541 14.4161 6.95191C14.9936 7.58191 15.3423 8.38516 15.3423 9.36766C15.3423 12.8244 13.2371 13.5857 11.2331 13.8084C11.5556 14.0874 11.8503 14.6349 11.8503 15.4749V17.9447C11.8503 18.1839 11.9943 18.4652 12.4511 18.3767C16.0248 17.1849 18.6003 13.8122 18.6003 9.83716C18.6003 4.86691 14.5706 0.837158 9.60034 0.837158Z"/>
-              </svg>
-              
-            </div>
-            <div class="tech-orbit-icon" style="--angle: 45deg;">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg"
-              alt="HTML5" class="tech-icon">
-            </div>
-            <div class="tech-orbit-icon" style="--angle: 90deg;">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg"
-              alt="CSS3" class="tech-icon">
-            </div>
-            <div class="tech-orbit-icon" style="--angle: 135deg;">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
-              alt="JavaScript" class="tech-icon">
-            </div>
-            <div class="tech-orbit-icon" style="--angle: 180deg;">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Sass_Logo_Color.svg"
-              alt="SCSS" class="tech-icon">
-            </div>
-            <div class="tech-orbit-icon" style="--angle: 225deg;">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg"
-              alt="Bootstrap" class="tech-icon">
-            </div>
-            <div class="tech-orbit-icon" style="--angle: 270deg;">
-              <img src="https://swiperjs.com/images/swiper-logo.svg"
-              alt="SwiperJS" class="tech-icon">
-            </div>
-            <div class="tech-orbit-icon" style="--angle: 315deg;">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg"
-              alt="Figma" class="tech-icon">
-            </div>
-          </div>
-        </div>
+      
+      <!-- Project 2 -->
+      <div class="project-card">
+        <img src="./images/image/imgtestuz.png" class="project-img" />
+        <h3 class="project-title">Test Application</h3>
+        <p lang="project2Desc" class="project-desc"></p>
+        <a
+        lang="liveDemo"
+        href="https://kamolov-doniyor.github.io/testapp/"
+        target="_blank"
+        class="project-btn"
+        >Live Demo</a
+        >
       </div>
-    </section>
-    <section class="projects-desc">
-      <div class="container">
-        <div class="projects-description">
-          <svg class="quote-open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 31" aria-hidden="true">
-            <path d="M30.5180534,0 L30.5180534,5.65149137 C29.010989,6.50549451 27.8681319,7.56043956 27.0894819,8.81632653 C26.310832,10.0722135 25.7205651,11.4034537 25.3186813,12.8100471 C24.9167975,14.2166405 24.7158556,15.7739403 24.7158556,17.4819466 L30.5180534,17.4819466 L30.5180534,29.8398744 L18.1601256,29.8398744 L18.1601256,22.1538462 C18.1601256,17.5321821 18.599686,14.0156986 19.4788069,11.6043956 C20.3579278,9.19309262 21.7017268,6.97017268 23.5102041,4.93563579 C25.3186813,2.9010989 27.6546311,1.25588697 30.5180534,0 Z M12.3579278,0 L12.3579278,5.65149137 C10.8508634,6.50549451 9.69544741,7.56043956 8.89167975,8.81632653 C8.08791209,10.0722135 7.48508634,11.4034537 7.08320251,12.8100471 C6.68131868,14.2166405 6.48037677,15.7739403 6.48037677,17.4819466 L12.3579278,17.4819466 L12.3579278,29.8398744 L0,29.8398744 L0,22.1538462 C0,17.5321821 0.43956044,14.0156986 1.31868132,11.6043956 C2.1978022,9.19309262 3.54160126,6.97017268 5.35007849,4.93563579 C7.15855573,2.9010989 9.49450549,1.25588697 12.3579278,0 Z"></path>
-          </svg>
-          <p lang="projectDesc" class="about-title">
-            
+      
+      <!-- Project 3 -->
+      <div class="project-card">
+        <img src="./images/image/imgavtotest.png" class="project-img" />
+        <h3 class="project-title">Avto Test</h3>
+        <p lang="project3Desc" class="project-desc"></p>
+        <a
+        lang="liveDemo"
+        href="https://kamolov-doniyor.github.io/justavtotest/"
+        target="_blank"
+        class="project-btn"
+        >Live Demo</a
+        >
+      </div>
+    </div>
+  </div>
+</section>
+<section id="contact" class="contact-section">
+  <h1 lang="contactTitle" class="section-title">Contact Me</h1>
+  <div class="container">
+    
+    <div class="contact-wrapper">
+      <div class="social-wrapper">
+        <div class="social-infa">
+          <h2 class="social-infa-1">DO YOU HAVE A PROJECT TO <br> DISCUSS ?</h2>
+          <h2 class="social-infa-2">GET IN TOUCH! 
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9h8m-8 4h6m4-9a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3h-5l-5 3v-3H6a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3z"/></svg>
+          </h2>
+        </div>
+        <div class="df-social">
+          <div class="social-phonenum-wrapper">
+            <h3 class="social-title">Phone Number</h3>
+            <p class="social-phonenum" id="copyText" toast toast-text="Copied to clipboard">
+              +998 90 325 15 18
+              <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              viewBox="0 0 24 24">
+              <path fill="currentColor" d="M16 20v2h-1v1H3v-1H2V6h1V5h3v15z" />
+              <path fill="currentColor" d="M22 7v11h-1v1H8v-1H7V2h1V1h8v6z" />
+              <path fill="currentColor" d="M22 5v1h-5V1h1v1h1v1h1v1h1v1z" />
+            </svg>
           </p>
-          <svg class="quote-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 31" aria-hidden="true">
-            <path d="M30.5180534,0 L30.5180534,5.65149137 C29.010989,6.50549451 27.8681319,7.56043956 27.0894819,8.81632653 C26.310832,10.0722135 25.7205651,11.4034537 25.3186813,12.8100471 C24.9167975,14.2166405 24.7158556,15.7739403 24.7158556,17.4819466 L30.5180534,17.4819466 L30.5180534,29.8398744 L18.1601256,29.8398744 L18.1601256,22.1538462 C18.1601256,17.5321821 18.599686,14.0156986 19.4788069,11.6043956 C20.3579278,9.19309262 21.7017268,6.97017268 23.5102041,4.93563579 C25.3186813,2.9010989 27.6546311,1.25588697 30.5180534,0 Z M12.3579278,0 L12.3579278,5.65149137 C10.8508634,6.50549451 9.69544741,7.56043956 8.89167975,8.81632653 C8.08791209,10.0722135 7.48508634,11.4034537 7.08320251,12.8100471 C6.68131868,14.2166405 6.48037677,15.7739403 6.48037677,17.4819466 L12.3579278,17.4819466 L12.3579278,29.8398744 L0,29.8398744 L0,22.1538462 C0,17.5321821 0.43956044,14.0156986 1.31868132,11.6043956 C2.1978022,9.19309262 3.54160126,6.97017268 5.35007849,4.93563579 C7.15855573,2.9010989 9.49450549,1.25588697 12.3579278,0 Z"></path>
-          </svg>
         </div>
-      </div>
-    </section>
-    <section id="mypro" class="projects-section">
-      <div class="container">
-        <h2 lang="projectsSection" class="section-title"></h2>
-        
-        <div class="projects-grid">
-          <!-- Project 1 -->
-          <div class="project-card">
-            <img src="./images/image/imgmilliy.png" class="project-img">
-            <h3 class="project-title">Uzbek Milliy</h3>
-            <p lang="project1Desc" class="project-desc"></p>
-            <a lang="liveDemo" href="https://kamolov-doniyor.github.io/myfirstpro/" target="_blank" class="project-btn">Live Demo</a>
-          </div>
-          
-          <!-- Project 2 -->
-          <div class="project-card">
-            <img src="./images/image/imgtestuz.png" class="project-img">
-            <h3 class="project-title">Test Application</h3>
-            <p lang="project2Desc" class="project-desc"></p>
-            <a lang="liveDemo" href="https://kamolov-doniyor.github.io/testapp/" target="_blank" class="project-btn">Live Demo</a>
-          </div>
-          
-          <!-- Project 3 -->
-          <div class="project-card">
-            <img src="./images/image/imgavtotest.png" class="project-img">
-            <h3 class="project-title">Avto Test</h3>
-            <p lang="project3Desc" class="project-desc"></p>
-            <a lang="liveDemo" href="https://kamolov-doniyor.github.io/justavtotest/" target="_blank" class="project-btn">Live Demo</a>
+        <div class="social-links-wrapper">
+          <h3 class="social-title">Social media</h3>
+          <div class="social-list">
+            <!-- email -->
+            <a href="" class="social-item">
+              <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-.887.732-1.636 1.636-1.636h.818L12 9.545l9.546-5.724h.818c.904 0 1.636.749 1.636 1.636Z"/>
+              </svg>
+            </a>
+            <!-- git hub -->
+            <a href="" class="social-item">
+              <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </a>
+            <!-- telegram -->
+            <a href="" class="social-item">
+              <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+              </svg>
+            </a>
+            <!-- instagram -->
+            <a href="" class="social-item">
+              <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
           </div>
         </div>
       </div>
-    </section> 
-    
-    
-    <!-- content end-->
-    <!-- footer -->
-    <footer class="custom-footer blur">
-      <div class="footer-content">
-        <div class="footer-column">
-          <img class="logo footer-logo" src="https://placehold.co/404" alt="">
-          <p class="logo">PORTFOLIO</p>
-        </div>
-        <div class="footer-column">
-          <h4>Sections</h4>
-          <a href="#aboutme">About me</a>
-          <a href="#ikow">I Know</a>
-          <a href="#">My Projects</a>
-        </div>
-        <div class="footer-column">
-          <h4>Contact</h4>
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kdoniyor213@gmail.com" target="_blank" rel="noopener noreferrer">Email me</a>
-          <a href="https://t.me/vxcssss" target="_blank" rel="noopener noreferrer">My Telegram</a>
-          <a href="https://www.instagram.com/x__kamolov/" target="_blank" rel="noopener noreferrer">Instagram Profile</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p class="copyright">&copy; 2025 Kamolov Doniyor. All Rights Reserved.
-        </p>
-      </div>
-    </footer>
-    <div class="footer-bg"></div>
-    <script src="./js/main.js"></script>
-    <script src="./js/script.js"></script>
-  </body>
-  </html>
+    </div>
+    <div class="con-wrapper">
+      <h1 class="con-title">CONTACT FORM</h1>
+    </div>
+  </div>
+  
+</div>
+</section>
+
+<!-- content end ------------------------------------>
+<!-- footer -->
+<footer class="custom-footer blur">
+  <div class="footer-content">
+    <div class="footer-column">
+      <img class="logo footer-logo" src="https://placehold.co/404" alt="" />
+      <p class="logo">PORTFOLIO</p>
+    </div>
+    <div class="footer-column">
+      <h4>Sections</h4>
+      <a href="#aboutme">About me</a>
+      <a href="#ikow">I Know</a>
+      <a href="#">My Projects</a>
+    </div>
+    <div class="footer-column">
+      <h4>Contact</h4>
+      <a
+      href="https://mail.google.com/mail/?view=cm&fs=1&to=kdoniyor213@gmail.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      >Email me</a
+      >
+      <a
+      href="https://t.me/vxcssss"
+      target="_blank"
+      rel="noopener noreferrer"
+      >My Telegram</a
+      >
+      <a
+      href="https://www.instagram.com/x__kamolov/"
+      target="_blank"
+      rel="noopener noreferrer"
+      >Instagram Profile</a
+      >
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="copyright">
+      &copy; 2025 Kamolov Doniyor. All Rights Reserved.
+    </p>
+  </div>
+</footer>
+<!-- loading -->
+<div id="progress-bg"></div>
+<div id="progress-bar"></div>
+<!-- backgrounds -->
+<div class="footer-bg"></div>
+<div class="header-bg"></div>
+<!-- notification -->
+<div class="toast" id="Toast">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+  viewBox="0 0 24 24">
+  <path fill="currentColor" d="m9.55 18l-5.7-5.7l1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"/>
+</svg>
+<p id="toast-notif"></p>
+</div>
+<!-- backtotop -->
+<button id="backToTop" title="Go to top">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  >
+  <g
+  fill="none"
+  stroke="currentColor"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  >
+  <path d="M12 21l0 -17.5" />
+  <path d="M12 3l7 7M12 3l-7 7" />
+</g>
+</svg>
+</button>
+<script src="./js/main.js"></script>
+<script src="./js/script.js"></script>
+</body>
+</html>
