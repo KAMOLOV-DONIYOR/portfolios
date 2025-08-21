@@ -1,48 +1,23 @@
-// js 
-function showToast(message) {
+// Unified showToast function with icon support
+function showToast(message, color = "#39FF14") {
   const toast = document.getElementById("Toast");
   const notif = document.getElementById("toast-notif");
-  
-  notif.innerText = message; // Matnni yozish
-  toast.classList.add("show");
-
-  // sound
-  const audio = new Audio("../sounds/notification.wav"); // o'zingizni audio faylingiz
-  audio.volume = 0.7;
-  audio.play();
-
-  // second
-  setTimeout(() => {
-    toast.classList.remove("show");
-  }, 3000);
-}
-
-// All [toast]
-document.querySelectorAll("[toast]").forEach(el => {
-  el.addEventListener("click", () => {
-    const message = el.getAttribute("toast-text") || "OK!";
-    showToast(message);
-  });
-});
-// Show toast function with dynamic SVG
-function showToast(message, color, type = "success") {
-  const toast = document.getElementById("Toast");
-  const notif = document.getElementById("toast-notif");
+  const toastIcon = toast.querySelector("svg");
 
   notif.innerText = message;
   toast.style.borderLeft = `3px solid ${color}`;
   toast.style.color = color;
 
-  // Change SVG based on type
-  const svgHTML = type === "error" 
-    ? `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-         <path fill="currentColor" d="M18.364 5.636l-1.414-1.414L12 9.172 7.05 4.222 5.636 5.636 10.586 10.586 5.636 15.536l1.414 1.414L12 12.828l4.95 4.95 1.414-1.414-4.95-4.95 4.95-4.95z"/>
-       </svg>`
-    : `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-         <path fill="currentColor" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"/>
-       </svg>`;
-
-  toast.innerHTML = svgHTML + `<p id="toast-notif">${message}</p>`;
+  // Set icon based on color (red = X, green = check)
+  if (color === "#FF0000") {
+    toastIcon.innerHTML = `
+      <path fill="currentColor" d="M18.364 5.636l-1.414-1.414L12 9.172 7.05 4.222 5.636 5.636 10.586 10.586 5.636 15.536l1.414 1.414L12 12.828l4.95 4.95 1.414-1.414L13.414 10.586l4.95-4.95z"/>
+    `;
+  } else {
+    toastIcon.innerHTML = `
+      <path fill="currentColor" d="m9.55 18l-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175 1.425 1.425z"/>
+    `;
+  }
 
   toast.classList.add("show");
 
@@ -59,7 +34,7 @@ function showToast(message, color, type = "success") {
 // Form validation + send message loader
 const form = document.getElementById("contactForm");
 const submitBtn = document.getElementById("send-mess");
-const originalBtnHTML = submitBtn.innerHTML; 
+const originalBtnHTML = submitBtn.innerHTML; // Save original button HTML
 const originalBtnBorder = submitBtn.style.border; 
 const originalBtnColor = submitBtn.style.color;
 
@@ -75,17 +50,17 @@ form.addEventListener("submit", function(e) {
 
   inputs.forEach((input, idx) => {
     if (!input.value.trim()) {
-      input.style.border = "3px solid #FF0000"; 
+      input.style.border = "3px solid #FF0000"; // red if empty
       hasEmpty = true;
     } else {
-      input.style.border = "3px solid #39FF14"; 
+      input.style.border = "3px solid #39FF14"; // green if filled
     }
   });
 
   if (hasEmpty) {
     submitBtn.style.border = "3px solid #FF0000";
     submitBtn.style.color = "#FF0000";
-    showToast("Please fill all required fields!", "#FF0000", "error");
+    showToast("Please fill all required fields!", "#FF0000");
   } else {
     submitBtn.style.border = "3px solid #39FF14";
     submitBtn.style.color = "#39FF14";
@@ -101,8 +76,9 @@ form.addEventListener("submit", function(e) {
       </svg>
     `;
 
+    // Simulate sending delay
     setTimeout(() => {
-      showToast("Message sent!", "#39FF14", "success");
+      showToast("Message sent!", "#39FF14"); // green toast
 
       // Restore button original
       submitBtn.innerHTML = originalBtnHTML;
@@ -114,11 +90,19 @@ form.addEventListener("submit", function(e) {
         input.value = "";
         input.style.border = originalInputBorders[idx];
       });
+
     }, 3000);
   }
 });
 
-
+// Optional: [toast] attribute elements
+document.querySelectorAll("[toast]").forEach(el => {
+  el.addEventListener("click", () => {
+    const message = el.getAttribute("toast-text") || "OK!";
+    showToast(message, "#39FF14");
+  });
+});
+// Notification and contact me !
 
 const copyText = document.getElementById("copyText");
 
