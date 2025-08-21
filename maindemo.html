@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>TEST Stand</title>
   <link rel="stylesheet" href="./css/main.css">
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-  
   <div class="navbar">
     <div class="nav-wrap">
       <a href="./index.html" class="logo">
@@ -70,7 +69,6 @@
 </div>
 </div>
 
-
 <section id="contact" class="contact-section">
   <h1 lang="contactTitle" class="section-title">Contact Me</h1>
   <div class="container">
@@ -128,13 +126,32 @@
       </div>
     </div>
     <div class="con-wrapper">
-      <h1 class="con-title">CONTACT FORM</h1>
+      <form id="contactForm" class="contact-form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your Name">
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com">
+        </div>
+        
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" placeholder="Type your message..."></textarea>
+        </div>
+        
+        <button id="send-mess">Send Message 
+          <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M470.3 271.15L43.16 447.31a7.83 7.83 0 0 1-11.16-7V327a8 8 0 0 1 6.51-7.86l247.62-47c17.36-3.29 17.36-28.15 0-31.44l-247.63-47a8 8 0 0 1-6.5-7.85V72.59c0-5.74 5.88-10.26 11.16-8L470.3 241.76a16 16 0 0 1 0 29.39"/></svg>
+        </button>
+        
+      </form>
     </div>
   </div>
   
 </div>
 </section>
-
 
 
 <!-- Toast -->
@@ -145,6 +162,29 @@
 </svg>
 <p id="toast-notif"></p>
 </div>
+<!-- loading -->
+<div id="progress-bg"></div>
+<div id="progress-bar"></div>
+<!-- backtotop -->
+<button id="backToTop" title="Go to top">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  >
+  <g
+  fill="none"
+  stroke="currentColor"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  >
+  <path d="M12 21l0 -17.5" />
+  <path d="M12 3l7 7M12 3l-7 7" />
+</g>
+</svg>
+</button>
 <script src="./js/main.js"></script>
 </body>
 </html>

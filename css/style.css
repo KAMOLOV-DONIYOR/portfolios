@@ -182,7 +182,7 @@
   align-items: center;
   justify-content: center;
   background: url("../images/backgraunds/backgroundf.png") no-repeat center
-    center;
+  center;
   background-size: 100% 100%;
 }
 
@@ -232,7 +232,7 @@
   width: 90px;
   height: 90px;
   transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-175px)
-    rotate(calc(-1 * var(--angle)));
+  rotate(calc(-1 * var(--angle)));
   animation: tech-counter-rotate 45s linear infinite;
 }
 
@@ -266,11 +266,11 @@
 @keyframes tech-counter-rotate {
   from {
     transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-210px)
-      rotate(calc(-1 * var(--angle)));
+    rotate(calc(-1 * var(--angle)));
   }
   to {
     transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-210px)
-      rotate(calc(-1 * var(--angle) - 360deg));
+    rotate(calc(-1 * var(--angle) - 360deg));
   }
 }
 
@@ -292,16 +292,16 @@
     width: 70px;
     height: 70px;
     transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-125px)
-      rotate(calc(-1 * var(--angle)));
+    rotate(calc(-1 * var(--angle)));
   }
   @keyframes tech-counter-rotate {
     from {
       transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-125px)
-        rotate(calc(-1 * var(--angle)));
+      rotate(calc(-1 * var(--angle)));
     }
     to {
       transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-125px)
-        rotate(calc(-1 * var(--angle) - 360deg));
+      rotate(calc(-1 * var(--angle) - 360deg));
     }
   }
 }
@@ -330,7 +330,7 @@
   align-items: center;
   justify-content: center;
   background: url("../images/backgraunds/backgrouns.png") no-repeat center
-    center;
+  center;
   background-size: 100% 100%;
 }
 
@@ -393,7 +393,13 @@
 }
 
 .contact-section {
-  margin-top: 100px;
+  width: 100%;
+  padding-block: 100px;
+  align-items: center;
+  justify-content: center;
+  background: url("../images/backgraunds/backgroundf.png") no-repeat center
+  center;
+  background-size: 120% 120%;
 }
 
 .contact-title {
@@ -532,8 +538,65 @@
   fill: var(--base-color);
 }
 
-.con-title {
-  margin-block: 12px;
-  font-size: 24px;
-  font-weight: 600;
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  margin-bottom: 5px;
+  color: var(--third-color);
+  font-weight: 500;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border-radius: 12px;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--third-color);
+  font-size: 16px;
+  resize: none;
+  transition: all 0.3s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--fourth-color);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus { 
+  outline: none;
+  border: 3px solid var(--base-color);
+}
+
+.contact-form button {
+  width: 200px;
+  padding: 10px 20px 8px;
+  border-radius: 12px;
+  background: var(--glass-background);
+   border: 3px solid rgba(255, 255, 255, 0.2);
+  font-size: 18px;
+  font-weight: 500;
+  gap: 5px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+  color: var(--base-color);
+  border: 3px solid var(--base-color);
+  background: var(--glass-background);
 }
