@@ -1,5 +1,5 @@
-// Unified showToast function with icon support
-function showToast(message, color = "#39FF14") {
+// Unified showToast function with icon support and custom duration
+function showToast(message, color = "#39FF14", duration = 3000) {
   const toast = document.getElementById("Toast");
   const notif = document.getElementById("toast-notif");
   const toastIcon = toast.querySelector("svg");
@@ -28,17 +28,16 @@ function showToast(message, color = "#39FF14") {
 
   setTimeout(() => {
     toast.classList.remove("show");
-  }, 5000);
+  }, duration);
 }
 
 // Form validation + send message loader
 const form = document.getElementById("contactForm");
 const submitBtn = document.getElementById("send-mess");
-const originalBtnHTML = submitBtn.innerHTML; // Save original button HTML
+const originalBtnHTML = submitBtn.innerHTML; 
 const originalBtnBorder = submitBtn.style.border; 
 const originalBtnColor = submitBtn.style.color;
 
-// Save original border for each input
 const inputs = form.querySelectorAll("input, textarea");
 const originalInputBorders = [];
 inputs.forEach(input => originalInputBorders.push(input.style.border || ""));
@@ -50,22 +49,21 @@ form.addEventListener("submit", function(e) {
 
   inputs.forEach((input, idx) => {
     if (!input.value.trim()) {
-      input.style.border = "3px solid #FF0000"; // red if empty
+      input.style.border = "3px solid #FF0000";
       hasEmpty = true;
     } else {
-      input.style.border = "3px solid #39FF14"; // green if filled
+      input.style.border = "3px solid #39FF14";
     }
   });
 
   if (hasEmpty) {
     submitBtn.style.border = "3px solid #FF0000";
     submitBtn.style.color = "#FF0000";
-    showToast("Please fill all required fields!", "#FF0000");
+    showToast("Please fill all required fields!", "#FF0000", 3000); // 3 seconds
   } else {
     submitBtn.style.border = "3px solid #39FF14";
     submitBtn.style.color = "#39FF14";
 
-    // Replace button content with loading SVG
     submitBtn.innerHTML = `
       Sending
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -76,22 +74,24 @@ form.addEventListener("submit", function(e) {
       </svg>
     `;
 
-    // Simulate sending delay
     setTimeout(() => {
-      showToast("Message sent!", "#39FF14"); // green toast
+      // Show green "message sent" toast for 8 seconds
+      showToast(
+        "The message was sent successfully, please wait for a response in your email!",
+        "#39FF14",
+        10000
+      );
 
-      // Restore button original
       submitBtn.innerHTML = originalBtnHTML;
       submitBtn.style.border = originalBtnBorder;
       submitBtn.style.color = originalBtnColor;
 
-      // Clear inputs and restore original borders
       inputs.forEach((input, idx) => {
         input.value = "";
         input.style.border = originalInputBorders[idx];
       });
 
-    }, 3000);
+    }, 6000);
   }
 });
 
@@ -99,9 +99,10 @@ form.addEventListener("submit", function(e) {
 document.querySelectorAll("[toast]").forEach(el => {
   el.addEventListener("click", () => {
     const message = el.getAttribute("toast-text") || "OK!";
-    showToast(message, "#39FF14");
+    showToast(message, "#39FF14", 3000);
   });
 });
+
 // Notification and contact me !
 
 const copyText = document.getElementById("copyText");
