@@ -240,19 +240,20 @@ a {
   position: fixed;
   top: 0;
   left: 0;
-  height: 5px;
-  background-color: var(--second-color);
+  height: 4px;
+  background-color: var(--base-color);
   width: 0%;
   z-index: 9999;
+  border-radius: 0 100px 100px 0;
   transform-origin: left;
 }
 #progress-bg {
   position: fixed;
   top: 0;
   left: 0;
-  height: 5px;
+  height: 4px;
   width: 100%;
-  background-color: rgb(77, 77, 77);
+  /* background-color: rgb(77, 77, 77); */
   z-index: 9998;
 }
 /* loading progres bar */

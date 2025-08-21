@@ -592,6 +592,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  outline: none;
   transition: all 0.3s ease;
 }
 
