@@ -288,7 +288,7 @@ document.querySelectorAll(".dropdown a[data-lang]").forEach((link) => {
 loadTranslations();
 // Translate Language Switcher
 
-document.querySelectorAll(".dropdown a").forEach((link) => {
+document.querySelectorAll(".lang-ahref").forEach((link) => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
     
@@ -302,7 +302,7 @@ document.querySelectorAll(".dropdown a").forEach((link) => {
       toastMsg = translations[systemLang]["LangisSystem"];
     } else {
       // oddiy tanlov
-      toastMsg = translations[lang]["ChangedLang"];
+      toastMsg = translations[lang]["ChangedLang"];;
     }
     
     showToast(toastMsg, "#39FF14", 5000); // yashil toast
