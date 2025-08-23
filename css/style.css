@@ -443,6 +443,7 @@
 }
 
 .social-infa-1 {
+  width: 500px;
   font-size: 28px;
   font-weight: bold;
   background: linear-gradient(90deg, #3a0ca3, #7209b7, #4361ee);

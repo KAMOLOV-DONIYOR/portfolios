@@ -8,7 +8,19 @@
     "project1Desc": "Mening birinchi loyiham HTML va CSS bilan yaratilgan.",
     "project2Desc": "JSON asosida ishlaydigan onlayn quiz ilovasi.",
     "project3Desc": "HTML, CSS va JS bilan ishlangan demo/onlayn test sayti.",
-    "liveDemo": "Jonli Ko‘rsatma"
+    "liveDemo": "Jonli Ko‘rsatma",
+    "contactTitle": "Menga bog‘laning",
+    "contactstInfa": "LOYIHANGIZ BORMI MUHOKAMA QILISH UCHUN?",
+    "contactscInfas": "ALOQAGA CHIQING!",
+    "contactphonenum": "Telefon raqami",
+    "contactsocial": "Ijtimoiy tarmoqlar",
+    "contactname": "Ism",
+    "contactnamePlaceholder": "Ismingiz",
+    "contactemail": "Elektron pochtangiz",
+    "contactemailPlaceholder": "siz@example.com",
+    "contactmessage": "Xabaringiz",
+    "contactmessagePlaceholder": "Xabaringizni yozing...",
+    "contactsendmessage": "Xabar yuborish"
   },
   "ru": {
     "aboutTitle": "Здравствуйте, меня зовут Камолов Даниёр, я фронтенд-разработчик, это мой сайт PORTFOLIO.",
@@ -19,7 +31,19 @@
     "project1Desc": "Мой первый проект — Milliy, созданный с использованием HTML и CSS.",
     "project2Desc": "Онлайн-приложение для викторин с вопросами на основе JSON.",
     "project3Desc": "Демо/онлайн тестовый сайт с использованием HTML, CSS и JS.",
-    "liveDemo": "Демонстрация"
+    "liveDemo": "Демонстрация",
+    "contactTitle": "Связаться со мной",
+    "contactstInfa": "У ВАС ЕСТЬ ПРОЕКТ ДЛЯ ОБСУЖДЕНИЯ?",
+    "contactscInfas": "СВЯЖИТЕСЬ!",
+    "contactphonenum": "Номер телефона",
+    "contactsocial": "Социальные сети",
+    "contactname": "Имя",
+    "contactnamePlaceholder": "Ваше имя",
+    "contactemail": "Ваш Email",
+    "contactemailPlaceholder": "вы@example.com",
+    "contactmessage": "Ваше сообщение",
+    "contactmessagePlaceholder": "Напишите ваше сообщение...",
+    "contactsendmessage": "Отправить сообщение"
   },
   "en": {
     "aboutTitle": "Hello, my name is Kamolov Daniyor, I am a frontend developer, this is my PORTFOLIO website.",
@@ -30,6 +54,18 @@
     "project1Desc": "My first project is a Milliy built with HTML and CSS.",
     "project2Desc": "An online quiz app with JSON-based questions.",
     "project3Desc": "An online demo/avto test site with HTML, CSS and JS.",
-    "liveDemo": "Live Demo"
+    "liveDemo": "Live Demo",
+    "contactTitle": "Contact Me",
+    "contactstInfa": "DO YOU HAVE A PROJECT TO DISCUSS?",
+    "contactscInfas": "GET IN TOUCH!",
+    "contactphonenum": "Phone Number",
+    "contactsocial": "Social Media",
+    "contactname": "Name",
+    "contactnamePlaceholder": "Your Name",
+    "contactemail": "Your Email",
+    "contactemailPlaceholder": "you@example.com",
+    "contactmessage": "Your Message",
+    "contactmessagePlaceholder": "Type your message...",
+    "contactsendmessage": "Send Message"
   }
 }

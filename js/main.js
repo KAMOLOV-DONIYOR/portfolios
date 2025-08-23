@@ -3,11 +3,11 @@ function showToast(message, color = "#39FF14", duration = 3000) {
   const toast = document.getElementById("Toast");
   const notif = document.getElementById("toast-notif");
   const toastIcon = toast.querySelector("svg");
-
+  
   notif.innerText = message;
   toast.style.borderLeft = `3px solid ${color}`;
   toast.style.color = color;
-
+  
   // Set icon based on color (red = X, green = check)
   if (color === "#FF0000") {
     toastIcon.innerHTML = `
@@ -18,14 +18,14 @@ function showToast(message, color = "#39FF14", duration = 3000) {
       <path fill="currentColor" d="m9.55 18l-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175 1.425 1.425z"/>
     `;
   }
-
+  
   toast.classList.add("show");
-
+  
   // Optional sound
   const audio = new Audio("sounds/notification.mp3");
   audio.volume = 1;
   audio.play();
-
+  
   setTimeout(() => {
     toast.classList.remove("show");
   }, duration);
@@ -34,19 +34,19 @@ function showToast(message, color = "#39FF14", duration = 3000) {
 // Form validation + send message loader
 const form = document.getElementById("contactForm");
 const submitBtn = document.getElementById("send-mess");
-const originalBtnHTML = submitBtn.innerHTML; 
-const originalBtnBorder = submitBtn.style.border; 
+const originalBtnHTML = submitBtn.innerHTML;
+const originalBtnBorder = submitBtn.style.border;
 const originalBtnColor = submitBtn.style.color;
 
 const inputs = form.querySelectorAll("input, textarea");
 const originalInputBorders = [];
-inputs.forEach(input => originalInputBorders.push(input.style.border || ""));
+inputs.forEach((input) => originalInputBorders.push(input.style.border || ""));
 
-form.addEventListener("submit", function(e) {
+form.addEventListener("submit", function (e) {
   e.preventDefault();
-
+  
   let hasEmpty = false;
-
+  
   inputs.forEach((input, idx) => {
     if (!input.value.trim()) {
       input.style.border = "3px solid #FF0000";
@@ -55,7 +55,7 @@ form.addEventListener("submit", function(e) {
       input.style.border = "3px solid #39FF14";
     }
   });
-
+  
   if (hasEmpty) {
     submitBtn.style.border = "3px solid #FF0000";
     submitBtn.style.color = "#FF0000";
@@ -63,7 +63,7 @@ form.addEventListener("submit", function(e) {
   } else {
     submitBtn.style.border = "3px solid #39FF14";
     submitBtn.style.color = "#39FF14";
-
+    
     submitBtn.innerHTML = `
       Sending
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -73,7 +73,7 @@ form.addEventListener("submit", function(e) {
         </path>
       </svg>
     `;
-
+    
     setTimeout(() => {
       // Show green "message sent" toast for 8 seconds
       showToast(
@@ -81,22 +81,21 @@ form.addEventListener("submit", function(e) {
         "#39FF14",
         10000
       );
-
+      
       submitBtn.innerHTML = originalBtnHTML;
       submitBtn.style.border = originalBtnBorder;
       submitBtn.style.color = originalBtnColor;
-
+      
       inputs.forEach((input, idx) => {
         input.value = "";
         input.style.border = originalInputBorders[idx];
       });
-
     }, 6000);
   }
 });
 
 // Optional: [toast] attribute elements
-document.querySelectorAll("[toast]").forEach(el => {
+document.querySelectorAll("[toast]").forEach((el) => {
   el.addEventListener("click", () => {
     const message = el.getAttribute("toast-text") || "OK!";
     showToast(message, "#39FF14", 3000);
@@ -108,8 +107,7 @@ document.querySelectorAll("[toast]").forEach(el => {
 const copyText = document.getElementById("copyText");
 
 copyText.addEventListener("click", () => {
-  navigator.clipboard.writeText(copyText.innerText).then(() => {
-  });
+  navigator.clipboard.writeText(copyText.innerText).then(() => {});
 });
 
 // Toast funksiyasi
@@ -195,10 +193,10 @@ async function loadTranslations() {
 function getSystemLanguage() {
   // Brauzer tilini olish
   const browserLang = navigator.language || navigator.userLanguage;
-  const langCode = browserLang.split('-')[0]; // 'en-US' -> 'en'
+  const langCode = browserLang.split("-")[0]; // 'en-US' -> 'en'
   
   // Mavjud tillar ro'yxati
-  const supportedLangs = ['en', 'ru', 'uz'];
+  const supportedLangs = ["en", "ru", "uz"];
   
   // Agar system tili mavjud bo'lsa, uni qaytarish
   if (supportedLangs.includes(langCode)) {
@@ -206,7 +204,7 @@ function getSystemLanguage() {
   }
   
   // Aks holda English qaytarish
-  return 'en';
+  return "en";
 }
 
 function setLanguage(lang) {
@@ -219,7 +217,7 @@ function setLanguage(lang) {
   
   if (!translations[actualLang]) return;
   
-  document.querySelectorAll("[lang]").forEach(el => {
+  document.querySelectorAll("[lang]").forEach((el) => {
     const key = el.getAttribute("lang");
     if (translations[actualLang][key]) {
       el.textContent = translations[actualLang][key];
@@ -229,20 +227,23 @@ function setLanguage(lang) {
   localStorage.setItem("selectedLang", lang); // Asl tanlangan qiymatni saqlash
   
   // Dropdown'da ko'rsatiladigan matn
-  const displayText = 
-  lang === "SystemLang" ? "System" :
-  lang === "en" ? "English" :
-  lang === "ru" ? "Russian" :
-  "Uzbek";
+  const displayText =
+  lang === "SystemLang"
+  ? "System"
+  : lang === "en"
+  ? "English"
+  : lang === "ru"
+  ? "Russian"
+  : "Uzbek";
   
   document.getElementById("selected-lang").textContent = displayText;
 }
 
-setLanguage("en")
+setLanguage("en");
 
 // Dropdown til tanlash event
-document.querySelectorAll(".dropdown a[data-lang]").forEach(link => {
-  link.addEventListener("click", e => {
+document.querySelectorAll(".dropdown a[data-lang]").forEach((link) => {
+  link.addEventListener("click", (e) => {
     e.preventDefault();
     const selectedLang = link.getAttribute("data-lang");
     setLanguage(selectedLang);
@@ -252,3 +253,23 @@ document.querySelectorAll(".dropdown a[data-lang]").forEach(link => {
 loadTranslations();
 // Translate Language Switcher
 
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("click", function (e) {
+    const target = e.target.closest(".ripple");
+    if (!target) return;
+
+    const circle = document.createElement("span");
+    const rect = target.getBoundingClientRect();
+
+    const size = Math.max(rect.width, rect.height);
+    circle.style.width = circle.style.height = size + "px";
+
+    circle.style.left = e.clientX - rect.left - size / 2 + "px";
+    circle.style.top = e.clientY - rect.top - size / 2 + "px";
+
+    target.appendChild(circle);
+
+    setTimeout(() => circle.remove(), 600);
+  });
+});
