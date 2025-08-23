@@ -1,3 +1,23 @@
+document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("click", function (e) {
+    const target = e.target.closest(".ripple");
+    if (!target) return;
+    
+    const circle = document.createElement("span");
+    const rect = target.getBoundingClientRect();
+    
+    const size = Math.max(rect.width, rect.height);
+    circle.style.width = circle.style.height = size + "px";
+    
+    circle.style.left = e.clientX - rect.left - size / 2 + "px";
+    circle.style.top = e.clientY - rect.top - size / 2 + "px";
+    
+    target.appendChild(circle);
+    
+    setTimeout(() => circle.remove(), 600);
+  });
+});
+// ripple
 // Unified showToast function with icon support and custom duration
 function showToast(message, color = "#39FF14", duration = 3000) {
   const toast = document.getElementById("Toast");
@@ -49,23 +69,33 @@ form.addEventListener("submit", function (e) {
   
   inputs.forEach((input, idx) => {
     if (!input.value.trim()) {
-      input.style.border = "3px solid #FF0000";
+      input.style.border = "2px solid #FF0000";
       hasEmpty = true;
     } else {
-      input.style.border = "3px solid #39FF14";
+      input.style.border = "2px solid #39FF14";
     }
   });
   
   if (hasEmpty) {
-    submitBtn.style.border = "3px solid #FF0000";
+    submitBtn.style.border = "2px solid #FF0000";
     submitBtn.style.color = "#FF0000";
-    showToast("Please fill all required fields!", "#FF0000", 3000); // 3 seconds
+    // Tanlangan tilni olish (localStorage dan)
+    let lang = localStorage.getItem("selectedLang") || "SystemLang";
+    
+    // Agar "SystemLang" bo'lsa, system tilini aniqlab olamiz
+    if (lang === "SystemLang") {
+      lang = getSystemLanguage();
+    }
+    
+    // Toastni chiqarishda
+    showToast(translations[lang]["Plsfilltoast"], "#FF0000", 3000);
+    
   } else {
-    submitBtn.style.border = "3px solid #39FF14";
+    submitBtn.style.border = "2px solid #39FF14";
     submitBtn.style.color = "#39FF14";
     
     submitBtn.innerHTML = `
-      Sending
+      <p class="send-mes-p" lang="SendingMes">Sending</p>
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
         <path fill="currentColor" d="M12 2A10 10 0 1 0 22 12A10 10 0 0 0 12 2Z" opacity="0.5"/>
         <path fill="currentColor" d="M20 12h2A10 10 0 0 0 12 2V4A8 8 0 0 1 20 12Z" transform="rotate(0 12 12)">
@@ -74,13 +104,14 @@ form.addEventListener("submit", function (e) {
       </svg>
     `;
     
+    
     setTimeout(() => {
-      // Show green "message sent" toast for 8 seconds
-      showToast(
-        "The message was sent successfully, please wait for a response in your email!",
-        "#39FF14",
-        10000
-      );
+      const lang = localStorage.getItem("selectedLang") || getSystemLanguage();
+      const toastMsg = translations[lang]["SendingToast"];
+      
+      // Show green "message sent" toast for 10 seconds
+      showToast(toastMsg, "#39FF14", 10000);
+      
       
       submitBtn.innerHTML = originalBtnHTML;
       submitBtn.style.border = originalBtnBorder;
@@ -175,6 +206,10 @@ backToTopBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 // Scroll to Top Button
+
+
+
+
 // Translate Language Switcher
 let translations = {};
 
@@ -253,23 +288,23 @@ document.querySelectorAll(".dropdown a[data-lang]").forEach((link) => {
 loadTranslations();
 // Translate Language Switcher
 
-
-document.addEventListener("DOMContentLoaded", () => {
-  document.addEventListener("click", function (e) {
-    const target = e.target.closest(".ripple");
-    if (!target) return;
-
-    const circle = document.createElement("span");
-    const rect = target.getBoundingClientRect();
-
-    const size = Math.max(rect.width, rect.height);
-    circle.style.width = circle.style.height = size + "px";
-
-    circle.style.left = e.clientX - rect.left - size / 2 + "px";
-    circle.style.top = e.clientY - rect.top - size / 2 + "px";
-
-    target.appendChild(circle);
-
-    setTimeout(() => circle.remove(), 600);
+document.querySelectorAll(".dropdown a").forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    
+    const lang = link.getAttribute("data-lang");
+    setLanguage(lang);
+    
+    let toastMsg = "";
+    if (lang === "SystemLang") {
+      // system tanlansa
+      let systemLang = getSystemLanguage(); // misol: "en", "ru", "uz"
+      toastMsg = translations[systemLang]["LangisSystem"];
+    } else {
+      // oddiy tanlov
+      toastMsg = translations[lang]["ChangedLang"];
+    }
+    
+    showToast(toastMsg, "#39FF14", 5000); // yashil toast
   });
 });

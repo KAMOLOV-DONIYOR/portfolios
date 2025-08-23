@@ -1,5 +1,8 @@
 {
   "uz": {
+    "ChangedLang": "O'zbek tiliga o'zgartirildi",
+    "LangisSystem": "Tizim tiliga o‘zgartirildi",
+    "SendingToast": "Xabar muvaffaqiyatli yuborildi, javobni emailingizdan kuting!",
     "aboutTitle": "Salom, mening ismim Kamolov Doniyor, men frontend dasturchiman, bu mening PORTFOLIO web saytim.",
     "aboutDesc": "Men frontend dasturchiman. Asosiy bilimlarim HTML, CSS va JavaScript dasturlash tillariga asoslangan. Bundan tashqari, Bootstrap, GitHub va Figma bilan ishlash tajribasiga egaman. Kelajakda Senior darajaga chiqib, o‘z IT kompaniyamni ochishni maqsad qilganman. Shaxsiy hayotimda muntazam ravishda sport bilan shug‘ullanaman, bilyard o‘ynashni yaxshi ko‘raman va doimo o‘z ustimda ishlashga intilaman.",
     "iknowTitle": "Men foydalanadigan & texnologiyalar.",
@@ -20,9 +23,14 @@
     "contactemailPlaceholder": "siz@example.com",
     "contactmessage": "Xabaringiz",
     "contactmessagePlaceholder": "Xabaringizni yozing...",
-    "contactsendmessage": "Xabar yuborish"
+    "contactsendmessage": "Xabar yuborish",
+    "SendingMes": "Yuborilmoqda",
+    "Plsfilltoast": "Iltimos, barcha maydonlarni to'ldiring!"
   },
   "ru": {
+    "ChangedLang": "Изменен на русский",
+    "LangisSystem": "Выбран системный язык",
+    "SendingToast": "Сообщение успешно отправлено, пожалуйста, дождитесь ответа на вашу почту!",
     "aboutTitle": "Здравствуйте, меня зовут Камолов Даниёр, я фронтенд-разработчик, это мой сайт PORTFOLIO.",
     "aboutDesc": "Я фронтенд-разработчик. Мои базовые знания основаны на языках программирования HTML, CSS и JavaScript. Кроме того, у меня есть опыт работы с Bootstrap, GitHub и Figma. В будущем я планирую стать Senior и открыть собственную IT-компанию. В личной жизни я регулярно занимаюсь спортом, люблю играть в бильярд и всегда стремлюсь совершенствоваться.",
     "iknowTitle": "Инструменты & технологии, которые я использую.",
@@ -43,9 +51,14 @@
     "contactemailPlaceholder": "вы@example.com",
     "contactmessage": "Ваше сообщение",
     "contactmessagePlaceholder": "Напишите ваше сообщение...",
-    "contactsendmessage": "Отправить сообщение"
+    "contactsendmessage": "Отправить сообщение",
+    "SendingMes": "Отправка",
+    "Plsfilltoast": "Пожалуйста, заполните все обязательные поля!"
   },
   "en": {
+    "ChangedLang": "Changed to English",
+    "LangisSystem": "Changed to System Language",
+    "SendingToast": "The message was sent successfully, please wait for a response in your email!",
     "aboutTitle": "Hello, my name is Kamolov Daniyor, I am a frontend developer, this is my PORTFOLIO website.",
     "aboutDesc": "I am a frontend developer. My basic knowledge is based on HTML, CSS and JavaScript. Additionally, I have experience with Bootstrap, GitHub and Figma. In the future, I aim to become a Senior and open my own IT company. In my personal life, I regularly play sports, enjoy playing billiards, and always strive for self-improvement.",
     "iknowTitle": "Tools & Technoligies i use.",
@@ -66,6 +79,8 @@
     "contactemailPlaceholder": "you@example.com",
     "contactmessage": "Your Message",
     "contactmessagePlaceholder": "Type your message...",
-    "contactsendmessage": "Send Message"
+    "contactsendmessage": "Send Message",
+    "SendingMes": "Sending",
+    "Plsfilltoast": "Please fill all required fields!"
   }
 }
