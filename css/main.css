@@ -1,6 +1,5 @@
-@import url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css");
+@import url("https://cdn.jsdelifoor.net/gh/devicons/devicon@latest/devicon.min.css");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap");
-
 /* main css/> */
 :root {
   --base-color: #00bfff;
@@ -182,15 +181,15 @@ a {
   pointer-events: none;
 }
 
-.footer-bg {
-  position: absolute;
-  width: 100%;
-  height: 230px;
-  background: url("../images/backgraunds/footerblue.png") no-repeat center
-  bottom;
-  background-size: 120% auto;
-  z-index: -1;
-}
+/* .footer-bg {
+position: absolute;
+width: 100%;
+height: 230px;
+background: url("../images/backgraunds/footerblue.png") no-repeat center
+bottom;
+background-size: 120% auto;
+z-index: -1;
+} */
 
 /* backgrounds, slidedown & blur */
 /* slide top */
@@ -424,14 +423,22 @@ a {
 /* header  */
 /* footer */
 .custom-footer {
+  width: 100%;
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("../images/backgraunds/footerblue.png") no-repeat center
+  bottom;
+  background-size: 110% 80%;
+}
+
+.footer-wrapper {
   width: 50%;
   margin-inline: auto;
   margin-bottom: 20px;
   padding: 20px;
   border-radius: 30px;
-  padding-bottom: 0;
-  position: relative;
-  top: 225px;
 }
 
 .footer-content {
@@ -553,7 +560,7 @@ a {
     background-size: 170%;
   }
   
-  .custom-footer {
+  .footer-wrapper {
     width: 70%;
     padding: 20px;
   }
@@ -614,8 +621,8 @@ a {
     background-size: 170%;
   }
   
-  .custom-footer {
-    width: 90%;
+  .footer-wrapper {
+    width: 70%;
     padding-inline: 20px;
   }
   
@@ -708,8 +715,8 @@ a {
   .footer-bg {
     background-size: 170%;
   }
-  .custom-footer {
-    width: 90%;
+  .footer-wrapper {
+    width: 70%;
     padding-inline: 20px;
     padding: 15px;
   }

@@ -22,8 +22,8 @@ function showToast(message, color = "#39FF14", duration = 3000) {
   toast.classList.add("show");
 
   // Optional sound
-  const audio = new Audio("../sounds/notification.wav");
-  audio.volume = 0.7;
+  const audio = new Audio("sounds/notification.mp3");
+  audio.volume = 1;
   audio.play();
 
   setTimeout(() => {
@@ -237,6 +237,8 @@ function setLanguage(lang) {
   
   document.getElementById("selected-lang").textContent = displayText;
 }
+
+setLanguage("en")
 
 // Dropdown til tanlash event
 document.querySelectorAll(".dropdown a[data-lang]").forEach(link => {
