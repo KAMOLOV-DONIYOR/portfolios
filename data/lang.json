@@ -1,6 +1,7 @@
 {
   "uz": {
     "ChangedLang": "O'zbek tiliga o'zgartirildi",
+    "copiedText": "Clipboardga nusxa olindi!",
     "LangisSystem": "Tizim tiliga o‘zgartirildi",
     "SendingToast": "Xabar muvaffaqiyatli yuborildi, javobni emailingizdan kuting!",
     "aboutTitle": "Salom, mening ismim Kamolov Doniyor, men frontend dasturchiman, bu mening PORTFOLIO web saytim.",
@@ -29,6 +30,7 @@
   },
   "ru": {
     "ChangedLang": "Изменен на русский",
+    "copiedText": "Скопировано в буфер обмена!",
     "LangisSystem": "Выбран системный язык",
     "SendingToast": "Сообщение успешно отправлено, пожалуйста, дождитесь ответа на вашу почту!",
     "aboutTitle": "Здравствуйте, меня зовут Камолов Даниёр, я фронтенд-разработчик, это мой сайт PORTFOLIO.",
@@ -57,6 +59,7 @@
   },
   "en": {
     "ChangedLang": "Changed to English",
+    "copiedText": "Copied to clipboard!",
     "LangisSystem": "Changed to System Language",
     "SendingToast": "The message was sent successfully, please wait for a response in your email!",
     "aboutTitle": "Hello, my name is Kamolov Daniyor, I am a frontend developer, this is my PORTFOLIO website.",

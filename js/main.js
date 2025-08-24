@@ -18,34 +18,46 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 // ripple
+
 // Unified showToast function with icon support and custom duration
 function showToast(message, color = "#39FF14", duration = 3000) {
   const toast = document.getElementById("Toast");
   const notif = document.getElementById("toast-notif");
   const toastIcon = toast.querySelector("svg");
-  
+
   notif.innerText = message;
   toast.style.borderLeft = `3px solid ${color}`;
   toast.style.color = color;
-  
+
   // Set icon based on color (red = X, green = check)
   if (color === "#FF0000") {
     toastIcon.innerHTML = `
-      <path fill="currentColor" d="M18.364 5.636l-1.414-1.414L12 9.172 7.05 4.222 5.636 5.636 10.586 10.586 5.636 15.536l1.414 1.414L12 12.828l4.95 4.95 1.414-1.414L13.414 10.586l4.95-4.95z"/>
+      <path fill="currentColor" d="M18.364 5.636l-1.414-1.414L12 9.172 
+      7.05 4.222 5.636 5.636 10.586 10.586 
+      5.636 15.536l1.414 1.414L12 12.828
+      l4.95 4.95 1.414-1.414L13.414 10.586l4.95-4.95z"/>
     `;
+
+    // ❌ Error sound
+    const erraudio = new Audio("sounds/notiferror.wav");
+    erraudio.volume = 1;
+    erraudio.play();
+
   } else {
     toastIcon.innerHTML = `
-      <path fill="currentColor" d="m9.55 18l-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175 1.425 1.425z"/>
+      <path fill="currentColor" d="m9.55 18l-5.7-5.7 
+      1.425-1.425L9.55 15.15l9.175-9.175 
+      1.425 1.425z"/>
     `;
+
+    // ✅ Success sound
+    const audio = new Audio("sounds/notification.mp3");
+    audio.volume = 1;
+    audio.play();
   }
-  
+
   toast.classList.add("show");
-  
-  // Optional sound
-  const audio = new Audio("sounds/notification.mp3");
-  audio.volume = 1;
-  audio.play();
-  
+
   setTimeout(() => {
     toast.classList.remove("show");
   }, duration);
@@ -138,7 +150,19 @@ document.querySelectorAll("[toast]").forEach((el) => {
 const copyText = document.getElementById("copyText");
 
 copyText.addEventListener("click", () => {
-  navigator.clipboard.writeText(copyText.innerText).then(() => {});
+  navigator.clipboard.writeText(copyText.innerText).then(() => {
+    // Tanlangan tilni olish
+    let lang = localStorage.getItem("selectedLang") || "SystemLang";
+    if (lang === "SystemLang") {
+      lang = getSystemLanguage();
+    }
+
+    // JSONdagi copiedText matnini olish
+    const copiedMsg = translations[lang]["copiedText"];
+
+    // Toastni yashil rangda chiqarish
+    showToast(copiedMsg, "#39FF14", 3000);
+  });
 });
 
 // Toast funksiyasi
