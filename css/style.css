@@ -36,6 +36,12 @@
   justify-content: space-between;
 }
 
+.about-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .about-left-wrap {
   margin-left: 50px;
   display: flex;

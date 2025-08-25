@@ -24,11 +24,11 @@ function showToast(message, color = "#39FF14", duration = 3000) {
   const toast = document.getElementById("Toast");
   const notif = document.getElementById("toast-notif");
   const toastIcon = toast.querySelector("svg");
-
+  
   notif.innerText = message;
   toast.style.borderLeft = `3px solid ${color}`;
   toast.style.color = color;
-
+  
   // Set icon based on color (red = X, green = check)
   if (color === "#FF0000") {
     toastIcon.innerHTML = `
@@ -37,27 +37,27 @@ function showToast(message, color = "#39FF14", duration = 3000) {
       5.636 15.536l1.414 1.414L12 12.828
       l4.95 4.95 1.414-1.414L13.414 10.586l4.95-4.95z"/>
     `;
-
+    
     // ❌ Error sound
     const erraudio = new Audio("sounds/notiferror.wav");
     erraudio.volume = 1;
     erraudio.play();
-
+    
   } else {
     toastIcon.innerHTML = `
       <path fill="currentColor" d="m9.55 18l-5.7-5.7 
       1.425-1.425L9.55 15.15l9.175-9.175 
       1.425 1.425z"/>
     `;
-
+    
     // ✅ Success sound
     const audio = new Audio("sounds/notification.mp3");
     audio.volume = 1;
     audio.play();
   }
-
+  
   toast.classList.add("show");
-
+  
   setTimeout(() => {
     toast.classList.remove("show");
   }, duration);
@@ -140,7 +140,7 @@ form.addEventListener("submit", function (e) {
 // Optional: [toast] attribute elements
 document.querySelectorAll("[toast]").forEach((el) => {
   el.addEventListener("click", () => {
-    const message = el.getAttribute("toast-text") || "OK!";
+    const message = el.getAttribute("toast-text") || "Undefind!?";
     showToast(message, "#39FF14", 3000);
   });
 });
@@ -156,10 +156,10 @@ copyText.addEventListener("click", () => {
     if (lang === "SystemLang") {
       lang = getSystemLanguage();
     }
-
+    
     // JSONdagi copiedText matnini olish
     const copiedMsg = translations[lang]["copiedText"];
-
+    
     // Toastni yashil rangda chiqarish
     showToast(copiedMsg, "#39FF14", 3000);
   });
