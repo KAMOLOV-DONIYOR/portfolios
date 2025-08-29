@@ -42,7 +42,6 @@ function showToast(message, color = "#39FF14", duration = 3000) {
     const erraudio = new Audio("sounds/notiferror.wav");
     erraudio.volume = 1;
     erraudio.play();
-    
   } else {
     toastIcon.innerHTML = `
       <path fill="currentColor" d="m9.55 18l-5.7-5.7 
@@ -51,7 +50,7 @@ function showToast(message, color = "#39FF14", duration = 3000) {
     `;
     
     // ✅ Success sound
-    const audio = new Audio("sounds/notification.mp3");
+    const audio = new Audio("sounds/notifisuccess.wav");
     audio.volume = 1;
     audio.play();
   }
@@ -101,7 +100,6 @@ form.addEventListener("submit", function (e) {
     
     // Toastni chiqarishda
     showToast(translations[lang]["Plsfilltoast"], "#FF0000", 3000);
-    
   } else {
     submitBtn.style.border = "2px solid #39FF14";
     submitBtn.style.color = "#39FF14";
@@ -116,14 +114,12 @@ form.addEventListener("submit", function (e) {
       </svg>
     `;
     
-    
     setTimeout(() => {
       const lang = localStorage.getItem("selectedLang") || getSystemLanguage();
       const toastMsg = translations[lang]["SendingToast"];
       
       // Show green "message sent" toast for 10 seconds
       showToast(toastMsg, "#39FF14", 10000);
-      
       
       submitBtn.innerHTML = originalBtnHTML;
       submitBtn.style.border = originalBtnBorder;
@@ -231,9 +227,6 @@ backToTopBtn.addEventListener("click", () => {
 });
 // Scroll to Top Button
 
-
-
-
 // Translate Language Switcher
 let translations = {};
 
@@ -283,9 +276,9 @@ function setLanguage(lang) {
     }
   });
   
-  localStorage.setItem("selectedLang", lang); // Asl tanlangan qiymatni saqlash
+  localStorage.setItem("selectedLang", lang); //
   
-  // Dropdown'da ko'rsatiladigan matn
+  // Dropdown
   const displayText =
   lang === "SystemLang"
   ? "System"
@@ -321,14 +314,14 @@ document.querySelectorAll(".lang-ahref").forEach((link) => {
     
     let toastMsg = "";
     if (lang === "SystemLang") {
-      // system tanlansa
+      //
       let systemLang = getSystemLanguage(); // misol: "en", "ru", "uz"
       toastMsg = translations[systemLang]["LangisSystem"];
     } else {
-      // oddiy tanlov
-      toastMsg = translations[lang]["ChangedLang"];;
+      //
+      toastMsg = translations[lang]["ChangedLang"];
     }
     
-    showToast(toastMsg, "#39FF14", 5000); // yashil toast
+    showToast(toastMsg, "#39FF14", 5000); //
   });
 });
