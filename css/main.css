@@ -366,6 +366,16 @@ z-index: -1;
 .nav-link button a {
   display: flex;
 }
+
+.svg-toass {
+  width: 18px;
+  height: 18px;
+}
+
+.svg-toas {
+  width: 21px;
+  height: 21px;
+}
 /* Dropdown Menu */
 .dropdown {
   position: absolute;

@@ -63,75 +63,6 @@ function showToast(message, color = "#39FF14", duration = 3000) {
 }
 
 // Form validation + send message loader
-const form = document.getElementById("contactForm");
-const submitBtn = document.getElementById("send-mess");
-const originalBtnHTML = submitBtn.innerHTML;
-const originalBtnBorder = submitBtn.style.border;
-const originalBtnColor = submitBtn.style.color;
-
-const inputs = form.querySelectorAll("input, textarea");
-const originalInputBorders = [];
-inputs.forEach((input) => originalInputBorders.push(input.style.border || ""));
-
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
-  
-  let hasEmpty = false;
-  
-  inputs.forEach((input, idx) => {
-    if (!input.value.trim()) {
-      input.style.border = "2px solid #FF0000";
-      hasEmpty = true;
-    } else {
-      input.style.border = "2px solid #39FF14";
-    }
-  });
-  
-  if (hasEmpty) {
-    submitBtn.style.border = "2px solid #FF0000";
-    submitBtn.style.color = "#FF0000";
-    // Tanlangan tilni olish (localStorage dan)
-    let lang = localStorage.getItem("selectedLang") || "SystemLang";
-    
-    // Agar "SystemLang" bo'lsa, system tilini aniqlab olamiz
-    if (lang === "SystemLang") {
-      lang = getSystemLanguage();
-    }
-    
-    // Toastni chiqarishda
-    showToast(translations[lang]["Plsfilltoast"], "#FF0000", 3000);
-  } else {
-    submitBtn.style.border = "2px solid #39FF14";
-    submitBtn.style.color = "#39FF14";
-    
-    submitBtn.innerHTML = `
-      <p class="send-mes-p" lang="SendingMes">Sending</p>
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path fill="currentColor" d="M12 2A10 10 0 1 0 22 12A10 10 0 0 0 12 2Z" opacity="0.5"/>
-        <path fill="currentColor" d="M20 12h2A10 10 0 0 0 12 2V4A8 8 0 0 1 20 12Z" transform="rotate(0 12 12)">
-          <animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="1s" repeatCount="indefinite"/>
-        </path>
-      </svg>
-    `;
-    
-    setTimeout(() => {
-      const lang = localStorage.getItem("selectedLang") || getSystemLanguage();
-      const toastMsg = translations[lang]["SendingToast"];
-      
-      // Show green "message sent" toast for 10 seconds
-      showToast(toastMsg, "#39FF14", 10000);
-      
-      submitBtn.innerHTML = originalBtnHTML;
-      submitBtn.style.border = originalBtnBorder;
-      submitBtn.style.color = originalBtnColor;
-      
-      inputs.forEach((input, idx) => {
-        input.value = "";
-        input.style.border = originalInputBorders[idx];
-      });
-    }, 6000);
-  }
-});
 
 // Optional: [toast] attribute elements
 document.querySelectorAll("[toast]").forEach((el) => {
@@ -324,4 +255,21 @@ document.querySelectorAll(".lang-ahref").forEach((link) => {
     
     showToast(toastMsg, "#39FF14", 5000); //
   });
+});
+
+const sections = document.querySelectorAll('.animate-on-scroll');
+
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animate');
+      observer.unobserve(entry.target); // faqat bir marta ishlash uchun
+    }
+  });
+}, {
+  threshold: 0.2 // elementning 20% qismi ko‘ringanda animatsiya boshlanadi
+});
+
+sections.forEach(section => {
+  observer.observe(section);
 });
