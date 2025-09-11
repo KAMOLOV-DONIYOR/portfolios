@@ -188,7 +188,7 @@
   align-items: center;
   justify-content: center;
   background: url("../images/backgraunds/backgroundf.png") no-repeat center
-    center;
+  center;
   background-size: 100% 100%;
 }
 
@@ -238,7 +238,7 @@
   width: 90px;
   height: 90px;
   transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-175px)
-    rotate(calc(-1 * var(--angle)));
+  rotate(calc(-1 * var(--angle)));
   animation: tech-counter-rotate 45s linear infinite;
 }
 
@@ -272,11 +272,11 @@
 @keyframes tech-counter-rotate {
   from {
     transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-210px)
-      rotate(calc(-1 * var(--angle)));
+    rotate(calc(-1 * var(--angle)));
   }
   to {
     transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-210px)
-      rotate(calc(-1 * var(--angle) - 360deg));
+    rotate(calc(-1 * var(--angle) - 360deg));
   }
 }
 
@@ -298,16 +298,16 @@
     width: 70px;
     height: 70px;
     transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-125px)
-      rotate(calc(-1 * var(--angle)));
+    rotate(calc(-1 * var(--angle)));
   }
   @keyframes tech-counter-rotate {
     from {
       transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-125px)
-        rotate(calc(-1 * var(--angle)));
+      rotate(calc(-1 * var(--angle)));
     }
     to {
       transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-125px)
-        rotate(calc(-1 * var(--angle) - 360deg));
+      rotate(calc(-1 * var(--angle) - 360deg));
     }
   }
 }
@@ -336,7 +336,7 @@
   align-items: center;
   justify-content: center;
   background: url("../images/backgraunds/backgrouns.png") no-repeat center
-    center;
+  center;
   background-size: 100% 100%;
 }
 
@@ -384,16 +384,16 @@
 }
 
 /* .project-btn {
-  backdrop-filter: var(--glass-backdrop);
-  background: var(--base-color);
-  border: var(--glass-border);
-  box-shadow: var(--glass-shadow);
-  display: inline-block;
-  padding: 8px 16px;
-  color: #fff;
-  border-radius: 6px;
-  text-decoration: none;
-  user-select: none;
+backdrop-filter: var(--glass-backdrop);
+background: var(--base-color);
+border: var(--glass-border);
+box-shadow: var(--glass-shadow);
+display: inline-block;
+padding: 8px 16px;
+color: #fff;
+border-radius: 6px;
+text-decoration: none;
+user-select: none;
 } */
 
 .contact-section {
@@ -402,7 +402,7 @@
   align-items: center;
   justify-content: center;
   background: url("../images/backgraunds/backgroundf.png") no-repeat center
-    center;
+  center;
   background-size: 120% 120%;
 }
 
@@ -617,9 +617,9 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 10px 18px;       /* o‘lchov */
-  border-radius: 6px;      /* burchak */
-  font-size: 1rem;         /* matn kattaligi */
+  padding: 10px 18px; /* o‘lchov */
+  border-radius: 6px; /* burchak */
+  font-size: 1rem; /* matn kattaligi */
   background: rgba(0, 0, 0, 0.2);
   cursor: pointer;
   overflow: hidden;
@@ -627,11 +627,14 @@
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  border: var(--glass-border);
+  box-shadow: var(--glass-shadow);
   color: #fff;
 }
 
 .btn:hover {
-  filter: drop-shadow(0 0 10px var(--base-color)) drop-shadow(0 0 30px var(--base-color));
+  filter: drop-shadow(0 0 10px var(--base-color))
+  drop-shadow(0 0 30px var(--base-color));
   letter-spacing: 0.1em;
   color: #fff;
 }
