@@ -64,7 +64,7 @@ form.addEventListener("submit", function (e) {
   const clmessage = clMessage.value.trim();
 
   // Send message to yourself
-  emailjs.send("service_3i4c2v6", "template_sseaibl", {
+  emailjs.send("service_xfmg2rf", "template_lycpunj", {
     to_email: "kdoniyor213@gmail.com",
     message: `Isim: ${clname}\nEmail: ${clemail}\nXabar: ${clmessage}`
   })
